@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+~$*.xlsx
+
+# data/state.json et data/sorties_slots.xlsx sont volontairement versionnes :
+# ils constituent la persistance du projet.

@@ -1,0 +1,84 @@
+name: Radar sorties slots
+
+on:
+  # GitHub planifie exclusivement en UTC, sans gestion de l'heure d'ete.
+  # Deux creneaux couvrent donc 9h00 de Paris toute l'annee :
+  #   07:00 UTC -> 09:00 CEST (avril a octobre)
+  #   08:00 UTC -> 09:00 CET  (octobre a mars)
+  # La garde quotidienne cote script empeche le second creneau de refaire
+  # le travail du premier.
+  schedule:
+    - cron: "0 7 * * *"
+    - cron: "0 8 * * *"
+
+  # Declenchement manuel, utile pour le bootstrap et les tests.
+  workflow_dispatch:
+    inputs:
+      notify:
+        description: "Forcer l'envoi du recap Telegram"
+        type: boolean
+        default: false
+      force:
+        description: "Ignorer la garde 'deja execute aujourd'hui'"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Simuler sans rien ecrire ni envoyer"
+        type: boolean
+        default: false
+
+# Necessaire pour que le job puisse commiter state.json et l'Excel.
+permissions:
+  contents: write
+
+# Deux crons ne doivent jamais s'executer en parallele sur le meme state.
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installer les dependances
+        run: pip install -r requirements.txt
+
+      - name: Lancer le radar
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SLOT_REPORT_API_KEY: ${{ secrets.SLOT_REPORT_API_KEY }}
+        run: |
+          # Forme if/then volontaire : "[ ... ] && VAR=..." ferait echouer
+          # l'etape sous set -e des que la condition est fausse.
+          ARGS=""
+          if [ "${{ inputs.notify }}"  = "true" ]; then ARGS="$ARGS --notify";  fi
+          if [ "${{ inputs.force }}"   = "true" ]; then ARGS="$ARGS --force";   fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          python -m src.main $ARGS
+
+      # always() : meme si l'envoi Telegram a echoue, la collecte du jour est
+      # deja dans state.json et doit etre conservee.
+      - name: Commiter le state et le classeur
+        if: always()
+        run: |
+          git config user.name  "slot-radar[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/state.json data/sorties_slots.xlsx
+          if git diff --staged --quiet; then
+            echo "Aucune nouveaute, rien a commiter."
+          else
+            git commit -m "radar: mise a jour du $(date -u +%Y-%m-%d)"
+            git push
+          fi
