@@ -67,7 +67,13 @@ def save(state: dict) -> None:
     log.info("state.json ecrit : %s entrees", len(state["entries"]))
 
 
-def merge(state: dict, incoming: list[dict], today: date, notified: bool) -> list[dict]:
+def merge(
+    state: dict,
+    incoming: list[dict],
+    today: date,
+    notified: bool,
+    estimate_dates: bool = True,
+) -> list[dict]:
     """Insere les entrees inconnues dans le state.
 
     Le critere de nouveaute est l'absence de la cle dans le state, jamais la
@@ -77,6 +83,12 @@ def merge(state: dict, incoming: list[dict], today: date, notified: bool) -> lis
 
     `notified` a True lors du bootstrap : on enregistre le catalogue existant
     sans declencher une notification de plusieurs milliers de lignes.
+
+    `estimate_dates` a False lors du bootstrap. En veille quotidienne, une
+    entree sans date publiee vient d'etre detectee : la date du jour est une
+    approximation raisonnable, marquee comme telle. Au bootstrap au contraire,
+    on importe un catalogue historique : dater du jour un jeu sorti en 2015
+    serait une invention pure. Dans ce cas la date reste vide.
 
     Renvoie la liste des entrees reellement ajoutees.
     """
@@ -90,12 +102,19 @@ def merge(state: dict, incoming: list[dict], today: date, notified: bool) -> lis
             continue
 
         release_date = entry["release_date"]
+        if release_date:
+            stored_date, source = release_date, "provider"
+        elif estimate_dates:
+            stored_date, source = iso_today, "detection"
+        else:
+            stored_date, source = None, "inconnue"
+
         state["entries"][key] = {
             "name": entry["name"],
             "provider": entry["provider"],
             "provider_slug": entry["provider_slug"],
-            "release_date": release_date or iso_today,
-            "date_source": "provider" if release_date else "detection",
+            "release_date": stored_date,
+            "date_source": source,
             "first_seen": iso_today,
             "notified": notified,
         }
@@ -107,8 +126,10 @@ def merge(state: dict, incoming: list[dict], today: date, notified: bool) -> lis
 
 
 def _refresh_release_date(stored: dict, incoming: dict) -> None:
-    """Complete une date estimee si l'API finit par publier la vraie date."""
-    if stored.get("date_source") == "detection" and incoming.get("release_date"):
+    """Complete une date estimee ou absente si l'API finit par la publier."""
+    if stored.get("date_source") in {"detection", "inconnue"} and incoming.get(
+        "release_date"
+    ):
         stored["release_date"] = incoming["release_date"]
         stored["date_source"] = "provider"
 

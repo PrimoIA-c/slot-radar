@@ -75,10 +75,15 @@ def build_message(entries: list[dict], today: date) -> str:
             reverse=True,
         )
         for entry in rows:
-            date_label = _fr_date(entry.get("release_date"))
-            # Une date deduite de la detection est signalee : elle n'a pas la
-            # meme fiabilite qu'une date publiee par le provider.
-            marker = "~" if entry.get("date_source") == "detection" else ""
+            source = entry.get("date_source")
+            if source == "inconnue" or not entry.get("release_date"):
+                date_label = "date inconnue"
+                marker = ""
+            else:
+                date_label = _fr_date(entry.get("release_date"))
+                # Une date deduite de la detection est signalee : elle n'a pas
+                # la meme fiabilite qu'une date publiee par le provider.
+                marker = "~" if source == "detection" else ""
             lines.append(
                 f"  {marker}{date_label} — {html.escape(entry.get('name', '?'))}"
             )

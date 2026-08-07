@@ -106,7 +106,11 @@ def run(args: argparse.Namespace) -> int:
             return 1
         # Tout le catalogue existant est marque comme deja notifie : le bot ne
         # doit pas annoncer 6 000 slots historiques a son premier lundi.
-        added = state.merge(current, incoming, today, notified=True)
+        # estimate_dates=False : sur un import historique, une date manquante
+        # reste vide plutot que d'etre remplacee par la date du jour.
+        added = state.merge(
+            current, incoming, today, notified=True, estimate_dates=False
+        )
         if args.no_backfill or not config.BOOTSTRAP_BACKFILL:
             log.info("Backfill Excel desactive : seul le state est initialise")
     else:
