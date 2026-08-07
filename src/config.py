@@ -39,6 +39,11 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip() or None
 # 0 = lundi ... 6 = dimanche. Jour d'envoi du recap sur Telegram.
 NOTIFY_WEEKDAY = int(os.getenv("NOTIFY_WEEKDAY", "0"))
 
+# Jour du rafraichissement du catalogue complet. Les dates de sortie publiees
+# apres coup par slot.report viennent alors completer les entrees sans date.
+# -1 desactive le rafraichissement.
+REFRESH_WEEKDAY = int(os.getenv("REFRESH_WEEKDAY", "0"))
+
 # Envoyer le fichier Excel en piece jointe avec le recap.
 SEND_EXCEL = os.getenv("SEND_EXCEL", "true").lower() in {"1", "true", "yes"}
 

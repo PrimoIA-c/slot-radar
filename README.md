@@ -129,6 +129,7 @@ Toutes les variables sont optionnelles sauf les deux secrets Telegram.
 |---|---|---|
 | `TIMEZONE` | `Europe/Paris` | Fuseau de référence pour toute la logique calendaire |
 | `NOTIFY_WEEKDAY` | `0` | Jour d'envoi. `0` = lundi, `6` = dimanche |
+| `REFRESH_WEEKDAY` | `0` | Jour du rafraîchissement du catalogue complet. `-1` désactive |
 | `SEND_EXCEL` | `true` | Joindre le classeur au récapitulatif |
 | `BOOTSTRAP_BACKFILL` | `true` | Importer l'historique dans l'Excel au premier run |
 | `EXCLUDED_PROVIDERS` | vide | Slugs à ignorer, séparés par des virgules |

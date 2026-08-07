@@ -117,6 +117,24 @@ def run(args: argparse.Namespace) -> int:
         incoming = sources.fetch_recent()
         added = state.merge(current, incoming, today, notified=False)
 
+        # Rafraichissement hebdomadaire : le flux quotidien ne montre que les
+        # 30 dernieres sorties. Un passage sur le catalogue complet recupere
+        # les dates publiees apres coup et rattrape toute sortie que la fenetre
+        # des 30 aurait laissee passer lors d'une semaine chargee.
+        if config.REFRESH_WEEKDAY >= 0 and today.weekday() == config.REFRESH_WEEKDAY:
+            log.info("Rafraichissement hebdomadaire du catalogue complet")
+            try:
+                catalogue = sources.fetch_catalogue()
+            except sources.SourceError as exc:
+                # Non bloquant : la collecte du jour a deja reussi.
+                log.warning("Rafraichissement impossible (%s), on continue", exc)
+            else:
+                state.refresh_dates(current, catalogue)
+                rattrapage = state.merge(current, catalogue, today, notified=False)
+                if rattrapage:
+                    log.info("%s sortie(s) rattrapee(s) hors fenetre", len(rattrapage))
+                    added += rattrapage
+
     # --- Excel -------------------------------------------------------------
     entries = state.all_entries(current)
     if is_bootstrap and (args.no_backfill or not config.BOOTSTRAP_BACKFILL):

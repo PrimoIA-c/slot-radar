@@ -171,6 +171,26 @@ def rebuild(entries: list[dict]) -> None:
     )
 
 
+def _fill_missing_dates(sheet: Worksheet, dates: dict[str, object]) -> int:
+    """Complete la colonne date des lignes ou elle est restee vide.
+
+    Une cellule deja remplie n'est jamais touchee : si tu as saisi une date a
+    la main, elle est prioritaire sur celle du provider.
+    """
+    filled = 0
+    for row in sheet.iter_rows(min_row=2, min_col=1, max_col=3):
+        date_cell, provider_cell, name_cell = row[0], row[1], row[2]
+        if date_cell.value not in (None, ""):
+            continue
+        parsed = dates.get(_row_key(provider_cell.value or "", name_cell.value or ""))
+        if parsed is None:
+            continue
+        date_cell.value = parsed
+        date_cell.number_format = DATE_FORMAT
+        filled += 1
+    return filled
+
+
 def sync(entries: list[dict]) -> None:
     """Ajoute au classeur existant les lignes qui n'y sont pas encore.
 
@@ -185,12 +205,23 @@ def sync(entries: list[dict]) -> None:
     workbook = load_workbook(config.EXCEL_FILE)
     ordered = sorted(entries, key=_sort_key)
 
+    # Dates devenues disponibles, a reporter sur les lignes restees vides.
+    known_dates: dict[str, object] = {}
+    for entry in ordered:
+        parsed = _parse_date(entry.get("release_date"))
+        if parsed is not None:
+            known_dates[_row_key(entry.get("provider", ""), entry.get("name", ""))] = parsed
+
+    dates_filled = 0
+
     # --- Onglet global -----------------------------------------------------
     if GLOBAL_SHEET in workbook.sheetnames:
         global_sheet = workbook[GLOBAL_SHEET]
     else:
         global_sheet = workbook.create_sheet(GLOBAL_SHEET, 0)
         _style_header(global_sheet)
+
+    dates_filled += _fill_missing_dates(global_sheet, known_dates)
 
     known = _existing_keys(global_sheet)
     missing = [e for e in ordered if _row_key(e.get("provider", ""), e.get("name", "")) not in known]
@@ -214,6 +245,7 @@ def sync(entries: list[dict]) -> None:
             _style_header(sheet)
             new_sheets += 1
 
+        dates_filled += _fill_missing_dates(sheet, known_dates)
         known = _existing_keys(sheet)
         missing = [
             r for r in rows if _row_key(r.get("provider", ""), r.get("name", "")) not in known
@@ -223,9 +255,10 @@ def sync(entries: list[dict]) -> None:
 
     workbook.save(config.EXCEL_FILE)
     log.info(
-        "Classeur mis a jour : %s ligne(s) ajoutee(s), %s nouvel(s) onglet(s), "
-        "aucune ligne existante modifiee",
+        "Classeur mis a jour : %s ligne(s) ajoutee(s), %s date(s) completee(s), "
+        "%s nouvel(s) onglet(s)",
         added_global,
+        dates_filled,
         new_sheets,
     )
 

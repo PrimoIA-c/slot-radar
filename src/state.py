@@ -154,5 +154,35 @@ def mark_notified(state: dict, entries: list[dict]) -> None:
             stored["notified"] = True
 
 
+def refresh_dates(state: dict, catalogue: list[dict]) -> int:
+    """Complete les dates devenues disponibles chez le provider.
+
+    Le flux quotidien ne voit que les 30 dernieres sorties : une date publiee
+    apres coup sur un jeu plus ancien ne serait jamais recuperee. Ce passage
+    hebdomadaire sur le catalogue complet corrige ca.
+
+    Seules les entrees sans date fiable sont touchees. Une date deja fournie
+    par le provider n'est jamais ecrasee.
+
+    Renvoie le nombre de dates completees.
+    """
+    filled = 0
+    for entry in catalogue:
+        stored = state["entries"].get(entry["key"])
+        if stored is None:
+            continue
+        if stored.get("date_source") == "provider":
+            continue
+        if not entry.get("release_date"):
+            continue
+        stored["release_date"] = entry["release_date"]
+        stored["date_source"] = "provider"
+        filled += 1
+
+    if filled:
+        log.info("%s date(s) completee(s) depuis le catalogue", filled)
+    return filled
+
+
 def all_entries(state: dict) -> list[dict]:
     return [{"key": key, **value} for key, value in state["entries"].items()]
