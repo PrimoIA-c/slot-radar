@@ -28,11 +28,11 @@ import json
 import logging
 from datetime import date
 
-from . import config, sources
+from . import config, sources, taxonomy
 
 log = logging.getLogger(__name__)
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 def empty_state() -> dict:
@@ -56,8 +56,43 @@ def load() -> dict:
     state.setdefault("version", SCHEMA_VERSION)
     state.setdefault("last_run", None)
     state.setdefault("entries", {})
+    _migrate(state)
     log.info("state.json charge : %s entrees connues", len(state["entries"]))
     return state
+
+
+def _migrate(state: dict) -> None:
+    """Met le state au schema courant.
+
+    v1 -> v2 : le champ `mechanic` stockait le libelle brut de l'API. Il
+    contient desormais la valeur normalisee, le brut passant dans
+    `mechanic_raw`. L'enrichissement ordinaire ne comble que les champs vides
+    et ne corrigerait donc jamais ces valeurs : la reprise doit etre explicite.
+    """
+    if state.get("version", 1) >= 2:
+        return
+
+    converted = 0
+    extracted = 0
+    for entry in state["entries"].values():
+        raw = entry.get("mechanic_raw") or entry.get("mechanic")
+        entry["mechanic_raw"] = raw
+        normalized = taxonomy.gain_system(raw)
+        if normalized != entry.get("mechanic"):
+            entry["mechanic"] = normalized
+            converted += 1
+        if entry.get("paylines") is None:
+            count = taxonomy.line_count(raw)
+            if count is not None:
+                entry["paylines"] = count
+                extracted += 1
+
+    state["version"] = 2
+    log.info(
+        "Migration v2 : %s gain system normalise(s), %s lignes/ways extraites",
+        converted,
+        extracted,
+    )
 
 
 def save(state: dict) -> None:
