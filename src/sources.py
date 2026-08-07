@@ -17,7 +17,7 @@ from typing import Any
 
 import requests
 
-from . import config
+from . import config, taxonomy
 
 log = logging.getLogger(__name__)
 
@@ -173,6 +173,14 @@ def normalize(raw: dict) -> dict | None:
 
     reels, rows = _grid_parts(raw.get("grid"))
 
+    # Le champ `mechanic` melange systemes de gain, features et themes.
+    # On conserve la valeur brute et on ajoute une version normalisee.
+    mechanic_raw = _text(raw.get("mechanic"))
+    paylines = _number(raw.get("paylines"))
+    if paylines is None:
+        # Le libelle brut contient parfois le nombre : "243 Ways", "15 Paylines".
+        paylines = taxonomy.line_count(mechanic_raw)
+
     return {
         # Cle de dedoublonnage : stricte, jamais de rapprochement flou.
         # "Sweet Bonanza" et "Sweet Bonanza 1000" sont deux jeux distincts.
@@ -186,15 +194,25 @@ def normalize(raw: dict) -> dict | None:
         "rtp": _number(raw.get("rtp")),
         "volatility": _label(raw.get("volatility")),
         "max_win": _number(raw.get("max_win")),
-        "mechanic": _text(raw.get("mechanic")),
+        "mechanic": taxonomy.gain_system(mechanic_raw),
+        "mechanic_raw": mechanic_raw,
         "reels": reels,
         "rows": rows,
-        "paylines": _number(raw.get("paylines")),
+        "paylines": paylines,
     }
 
 
 # Champs de caracteristiques, utilises par le state pour l'enrichissement.
-ATTRIBUTES = ("rtp", "volatility", "max_win", "mechanic", "reels", "rows", "paylines")
+ATTRIBUTES = (
+    "rtp",
+    "volatility",
+    "max_win",
+    "mechanic",
+    "mechanic_raw",
+    "reels",
+    "rows",
+    "paylines",
+)
 
 
 def _normalize_all(rows: list[dict]) -> list[dict]:

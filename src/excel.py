@@ -36,6 +36,7 @@ HEADERS = [
     "Volatilite",
     "Max Win",
     "Gain System",
+    "Gain System (brut)",
     "Reels",
     "Rows",
     "Lignes/Ways",
@@ -47,6 +48,7 @@ ATTRIBUTE_COLUMNS = [
     ("volatility", None),
     ("max_win", "#,##0"),
     ("mechanic", None),
+    ("mechanic_raw", None),
     ("reels", "0"),
     ("rows", "0"),
     ("paylines", "#,##0"),
@@ -61,7 +63,7 @@ DATE_FORMAT = "DD/MM/YYYY"
 
 HEADER_FILL = PatternFill("solid", fgColor="1F2933")
 HEADER_FONT = Font(color="FFFFFF", bold=True, size=11)
-COLUMN_WIDTHS = [16, 26, 42, 9, 12, 11, 15, 8, 8, 13]
+COLUMN_WIDTHS = [16, 26, 42, 9, 12, 11, 15, 24, 8, 8, 13]
 
 # Caracteres interdits par Excel dans un nom d'onglet.
 _ILLEGAL_SHEET_CHARS = re.compile(r"[\\/*?:\[\]]")
