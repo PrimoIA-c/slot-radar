@@ -28,7 +28,7 @@ import json
 import logging
 from datetime import date
 
-from . import config
+from . import config, sources
 
 log = logging.getLogger(__name__)
 
@@ -117,6 +117,7 @@ def merge(
             "date_source": source,
             "first_seen": iso_today,
             "notified": notified,
+            **{field: entry.get(field) for field in sources.ATTRIBUTES},
         }
         added.append({"key": key, **state["entries"][key]})
 
@@ -132,6 +133,21 @@ def _refresh_release_date(stored: dict, incoming: dict) -> None:
     ):
         stored["release_date"] = incoming["release_date"]
         stored["date_source"] = "provider"
+    _refresh_attributes(stored, incoming)
+
+
+def _refresh_attributes(stored: dict, incoming: dict) -> int:
+    """Renseigne les caracteristiques encore absentes.
+
+    Une valeur deja connue n'est jamais remplacee : on ne fait que combler
+    les trous, au fur et a mesure que slot.report enrichit sa base.
+    """
+    filled = 0
+    for field in sources.ATTRIBUTES:
+        if stored.get(field) is None and incoming.get(field) is not None:
+            stored[field] = incoming[field]
+            filled += 1
+    return filled
 
 
 def pending(state: dict) -> list[dict]:
@@ -167,10 +183,12 @@ def refresh_dates(state: dict, catalogue: list[dict]) -> int:
     Renvoie le nombre de dates completees.
     """
     filled = 0
+    attrs = 0
     for entry in catalogue:
         stored = state["entries"].get(entry["key"])
         if stored is None:
             continue
+        attrs += _refresh_attributes(stored, entry)
         if stored.get("date_source") == "provider":
             continue
         if not entry.get("release_date"):
@@ -179,8 +197,12 @@ def refresh_dates(state: dict, catalogue: list[dict]) -> int:
         stored["date_source"] = "provider"
         filled += 1
 
-    if filled:
-        log.info("%s date(s) completee(s) depuis le catalogue", filled)
+    if filled or attrs:
+        log.info(
+            "Catalogue : %s date(s) et %s caracteristique(s) completees",
+            filled,
+            attrs,
+        )
     return filled
 
 

@@ -28,13 +28,40 @@ from . import config
 
 log = logging.getLogger(__name__)
 
-HEADERS = ["Date de sortie", "Provider", "Slot"]
+HEADERS = [
+    "Date de sortie",
+    "Provider",
+    "Slot",
+    "RTP",
+    "Volatilite",
+    "Max Win",
+    "Gain System",
+    "Reels",
+    "Rows",
+    "Lignes/Ways",
+]
+
+# Champ du state associe a chaque colonne, a partir de la colonne D.
+ATTRIBUTE_COLUMNS = [
+    ("rtp", "0.00"),
+    ("volatility", None),
+    ("max_win", "#,##0"),
+    ("mechanic", None),
+    ("reels", "0"),
+    ("rows", "0"),
+    ("paylines", "#,##0"),
+]
+FIRST_ATTRIBUTE_COL = 4
+
+# Marqueur des donnees absentes chez le fournisseur.
+NA = "N/A"
+
 GLOBAL_SHEET = "Toutes sorties"
 DATE_FORMAT = "DD/MM/YYYY"
 
 HEADER_FILL = PatternFill("solid", fgColor="1F2933")
 HEADER_FONT = Font(color="FFFFFF", bold=True, size=11)
-COLUMN_WIDTHS = [16, 26, 44]
+COLUMN_WIDTHS = [16, 26, 42, 9, 12, 11, 15, 8, 8, 13]
 
 # Caracteres interdits par Excel dans un nom d'onglet.
 _ILLEGAL_SHEET_CHARS = re.compile(r"[\\/*?:\[\]]")
@@ -110,9 +137,19 @@ def _append_rows(sheet: Worksheet, entries: list[dict]) -> int:
     """Ajoute les lignes a la suite, sans toucher a l'existant."""
     for entry in entries:
         parsed = _parse_date(entry.get("release_date"))
-        sheet.append([parsed, entry.get("provider", ""), entry.get("name", "")])
+        row = [parsed, entry.get("provider", ""), entry.get("name", "")]
+        row += [
+            entry.get(field) if entry.get(field) is not None else NA
+            for field, _ in ATTRIBUTE_COLUMNS
+        ]
+        sheet.append(row)
+
+        index = sheet.max_row
         if parsed is not None:
-            sheet.cell(row=sheet.max_row, column=1).number_format = DATE_FORMAT
+            sheet.cell(row=index, column=1).number_format = DATE_FORMAT
+        for offset, (field, fmt) in enumerate(ATTRIBUTE_COLUMNS):
+            if fmt and entry.get(field) is not None:
+                sheet.cell(row=index, column=FIRST_ATTRIBUTE_COL + offset).number_format = fmt
     return len(entries)
 
 
@@ -171,6 +208,37 @@ def rebuild(entries: list[dict]) -> None:
     )
 
 
+def _fill_missing_cells(sheet: Worksheet, values: dict[str, dict]) -> int:
+    """Comble les caracteristiques restees vides ou marquees N/A.
+
+    Une valeur saisie a la main n'est jamais ecrasee : seules les cellules
+    vides et les N/A poses par le script sont mises a jour, lorsque
+    slot.report finit par publier la donnee.
+    """
+    filled = 0
+    for row in sheet.iter_rows(min_row=2, min_col=1, max_col=len(HEADERS)):
+        entry = values.get(_row_key(row[1].value or "", row[2].value or ""))
+        if entry is None:
+            continue
+        for offset, (field, fmt) in enumerate(ATTRIBUTE_COLUMNS):
+            index = FIRST_ATTRIBUTE_COL + offset - 1
+            if index >= len(row):
+                continue
+            cell = row[index]
+            if cell.value not in (None, "", NA):
+                continue
+            value = entry.get(field)
+            if value is None:
+                if cell.value in (None, ""):
+                    cell.value = NA
+                continue
+            cell.value = value
+            if fmt:
+                cell.number_format = fmt
+            filled += 1
+    return filled
+
+
 def _fill_missing_dates(sheet: Worksheet, dates: dict[str, object]) -> int:
     """Complete la colonne date des lignes ou elle est restee vide.
 
@@ -212,7 +280,11 @@ def sync(entries: list[dict]) -> None:
         if parsed is not None:
             known_dates[_row_key(entry.get("provider", ""), entry.get("name", ""))] = parsed
 
+    by_key = {
+        _row_key(e.get("provider", ""), e.get("name", "")): e for e in ordered
+    }
     dates_filled = 0
+    attrs_filled = 0
 
     # --- Onglet global -----------------------------------------------------
     if GLOBAL_SHEET in workbook.sheetnames:
@@ -222,6 +294,7 @@ def sync(entries: list[dict]) -> None:
         _style_header(global_sheet)
 
     dates_filled += _fill_missing_dates(global_sheet, known_dates)
+    attrs_filled += _fill_missing_cells(global_sheet, by_key)
 
     known = _existing_keys(global_sheet)
     missing = [e for e in ordered if _row_key(e.get("provider", ""), e.get("name", "")) not in known]
@@ -246,6 +319,7 @@ def sync(entries: list[dict]) -> None:
             new_sheets += 1
 
         dates_filled += _fill_missing_dates(sheet, known_dates)
+        _fill_missing_cells(sheet, by_key)
         known = _existing_keys(sheet)
         missing = [
             r for r in rows if _row_key(r.get("provider", ""), r.get("name", "")) not in known
@@ -255,10 +329,11 @@ def sync(entries: list[dict]) -> None:
 
     workbook.save(config.EXCEL_FILE)
     log.info(
-        "Classeur mis a jour : %s ligne(s) ajoutee(s), %s date(s) completee(s), "
-        "%s nouvel(s) onglet(s)",
+        "Classeur mis a jour : %s ligne(s) ajoutee(s), %s date(s) et "
+        "%s caracteristique(s) completees, %s nouvel(s) onglet(s)",
         added_global,
         dates_filled,
+        attrs_filled,
         new_sheets,
     )
 
