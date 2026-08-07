@@ -8,3 +8,5 @@ venv/
 
 # data/state.json et data/sorties_slots.xlsx sont volontairement versionnes :
 # ils constituent la persistance du projet.
+
+data/*.bak
