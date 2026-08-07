@@ -117,6 +117,7 @@ python -m src.main --notify --force    # envoi immédiat du récap
 | `--notify` | Force l'envoi même hors du jour configuré |
 | `--force` | Ignore la garde « déjà exécuté aujourd'hui » |
 | `--no-backfill` | Au bootstrap, n'importe pas l'historique dans l'Excel |
+| `--rebuild` | Reconstruit le classeur à zéro — **efface tes ajouts manuels** |
 
 ---
 
@@ -153,7 +154,7 @@ data/
 
 ### Trois décisions qui structurent le projet
 
-**`state.json` est la seule source de vérité.** L'Excel est reconstruit intégralement à chaque run. Aucune écriture incrémentale, donc aucune dérive possible entre les deux. Si tu supprimes le classeur, il se régénère à l'identique au run suivant.
+**`state.json` est la source de vérité, le classeur t'appartient.** Le script n'ajoute que des lignes au classeur, à la suite de l'existant, et ne réécrit jamais ce qui s'y trouve déjà. Colonnes ajoutées à la main, surlignages, commentaires, onglets personnels : tout survit d'un run à l'autre. Le tri est chronologique croissant — les nouveautés arrivent en bas, comme un journal, ce qui rend l'ajout naturel sans jamais déplacer une ligne. Si le classeur disparaît, il se régénère depuis `state.json`.
 
 **La nouveauté se définit par l'absence dans le state, jamais par la date.** La couverture du champ `release_date` est partielle (~84 %) et une slot peut entrer dans la base plusieurs jours après son lancement. Filtrer sur une fenêtre de dates ferait passer ces entrées à la trappe définitivement. Une date manquante est remplacée par la date de détection et signalée par un `~` dans le message.
 

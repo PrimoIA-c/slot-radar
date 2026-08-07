@@ -62,6 +62,11 @@ def _parse_args() -> argparse.Namespace:
         help="Simule le run sans ecrire ni envoyer quoi que ce soit",
     )
     parser.add_argument(
+        "--rebuild",
+        action="store_true",
+        help="Reconstruit le classeur a zero (efface les ajouts manuels)",
+    )
+    parser.add_argument(
         "--no-backfill",
         action="store_true",
         help="Au bootstrap, n'importe pas l'historique dans l'Excel",
@@ -114,9 +119,18 @@ def run(args: argparse.Namespace) -> int:
         entries = []
 
     if args.dry_run:
-        log.info("[dry-run] Excel non ecrit (%s lignes auraient ete generees)", len(entries))
+        log.info("[dry-run] Classeur non modifie (%s lignes connues)", len(entries))
+    elif args.rebuild:
+        log.warning(
+            "--rebuild : le classeur est reconstruit a zero. Les colonnes et la "
+            "mise en forme ajoutees a la main seront perdues."
+        )
+        excel.rebuild(entries)
+    elif is_bootstrap:
+        excel.rebuild(entries)
     else:
-        excel.build(entries)
+        # Ajout pur : rien de ce qui est deja dans le fichier n'est reecrit.
+        excel.sync(entries)
 
     # --- Notification ------------------------------------------------------
     should_notify = args.notify or today.weekday() == config.NOTIFY_WEEKDAY
