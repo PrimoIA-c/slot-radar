@@ -155,10 +155,17 @@ def run(args: argparse.Namespace) -> int:
         excel.sync(entries)
 
     # --- Notification ------------------------------------------------------
-    should_notify = args.notify or today.weekday() == config.NOTIFY_WEEKDAY
+    is_weekly = args.notify or today.weekday() == config.NOTIFY_WEEKDAY
     released = state.pending_released(current, today)
     upcoming = state.pending_upcoming(current, today)
-    waiting = released + upcoming
+
+    # Les sorties effectives peuvent partir tous les jours ; les annonces
+    # attendent le recap hebdomadaire. Les jours sans sortie, les deux listes
+    # sont vides et le bot ne dit rien.
+    send_released = released if (is_weekly or config.DAILY_RELEASES) else []
+    send_upcoming = upcoming if is_weekly else []
+    waiting = send_released + send_upcoming
+    should_notify = bool(waiting)
 
     if is_bootstrap:
         log.info(
@@ -167,22 +174,21 @@ def run(args: argparse.Namespace) -> int:
             len(added),
             WEEKDAYS_FR[config.NOTIFY_WEEKDAY],
         )
-    elif not should_notify:
-        log.info(
-            "Pas le jour d'envoi (%s attendu). %s entree(s) en attente.",
-            WEEKDAYS_FR[config.NOTIFY_WEEKDAY],
-            len(waiting),
-        )
     elif not waiting:
-        log.info("Jour d'envoi, mais aucune nouveaute a annoncer. Silence.")
+        log.info(
+            "Rien a annoncer aujourd'hui. Silence. "
+            "(%s sortie(s) et %s annonce(s) en attente du recap)",
+            len(released) - len(send_released),
+            len(upcoming) - len(send_upcoming),
+        )
     elif args.dry_run:
         log.info(
             "[dry-run] %s sortie(s) et %s a venir auraient ete annoncees",
-            len(released),
-            len(upcoming),
+            len(send_released),
+            len(send_upcoming),
         )
         print("\n--- Apercu du message ---")
-        print(notifier.build_message(released, upcoming, today))
+        print(notifier.build_message(send_released, send_upcoming, today, is_weekly))
     elif not notifier.is_configured():
         log.warning(
             "TELEGRAM_BOT_TOKEN ou TELEGRAM_CHAT_ID absent : envoi impossible. "
@@ -191,8 +197,12 @@ def run(args: argparse.Namespace) -> int:
         )
     else:
         try:
-            notifier.send_message(notifier.build_message(released, upcoming, today))
-            if config.SEND_EXCEL:
+            notifier.send_message(
+                notifier.build_message(send_released, send_upcoming, today, is_weekly)
+            )
+            # Le classeur n'accompagne que le recap hebdomadaire : l'envoyer a
+            # chaque alerte quotidienne serait inutilement lourd.
+            if config.SEND_EXCEL and is_weekly:
                 notifier.send_document(
                     config.EXCEL_FILE,
                     caption=f"Historique complet — {len(entries)} sorties",
@@ -206,12 +216,12 @@ def run(args: argparse.Namespace) -> int:
             # Marquage seulement apres succes complet. Les sorties effectives
             # portent les deux drapeaux ; une annonce anticipee ne pose que
             # `notified`, pour que la slot soit resignalee le jour de sa sortie.
-            state.mark_notified(current, released, released=True)
-            state.mark_notified(current, upcoming)
+            state.mark_notified(current, send_released, released=True)
+            state.mark_notified(current, send_upcoming)
             log.info(
                 "%s sortie(s) et %s a venir annoncees",
-                len(released),
-                len(upcoming),
+                len(send_released),
+                len(send_upcoming),
             )
 
     # --- Persistance -------------------------------------------------------

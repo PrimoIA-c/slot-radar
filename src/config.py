@@ -44,6 +44,10 @@ NOTIFY_WEEKDAY = int(os.getenv("NOTIFY_WEEKDAY", "0"))
 # -1 desactive le rafraichissement.
 REFRESH_WEEKDAY = int(os.getenv("REFRESH_WEEKDAY", "0"))
 
+# Alerter des qu'une slot sort, sans attendre le recap hebdomadaire.
+# Les jours sans sortie, le bot reste silencieux : aucun message vide.
+DAILY_RELEASES = os.getenv("DAILY_RELEASES", "true").lower() in {"1", "true", "yes"}
+
 # Envoyer le fichier Excel en piece jointe avec le recap.
 SEND_EXCEL = os.getenv("SEND_EXCEL", "true").lower() in {"1", "true", "yes"}
 

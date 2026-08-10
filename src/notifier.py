@@ -81,16 +81,28 @@ def _provider_block(entries: list[dict]) -> list[str]:
 
 
 def build_message(
-    released: list[dict], upcoming: list[dict], today: date
+    released: list[dict], upcoming: list[dict], today: date, weekly: bool = True
 ) -> str:
-    """Compose le recap en deux sections : deja sorties, puis a venir."""
-    lines = [f"<b>Sorties slots — semaine du {today.strftime('%d/%m/%Y')}</b>", ""]
+    """Compose le message.
+
+    Deux sections possibles : les slots effectivement sorties, et celles
+    annoncees pour plus tard. L'alerte quotidienne ne porte que la premiere,
+    le recap hebdomadaire porte les deux.
+    """
+    if weekly:
+        title = f"Sorties slots — semaine du {today.strftime('%d/%m/%Y')}"
+    else:
+        title = f"Sortie du jour — {today.strftime('%d/%m/%Y')}"
+    lines = [f"<b>{title}</b>", ""]
 
     if released:
         plural = "s" if len(released) > 1 else ""
-        lines.append(f"<b>SORTIES ({len(released)})</b>")
-        lines.append(f"<i>Disponible{plural} maintenant</i>")
-        lines.append("")
+        # En alerte quotidienne le titre porte deja l'information : pas
+        # besoin d'un en-tete de section pour une seule liste.
+        if weekly:
+            lines.append(f"<b>SORTIES ({len(released)})</b>")
+            lines.append(f"<i>Disponible{plural} maintenant</i>")
+            lines.append("")
         lines += _provider_block(released)
 
     if upcoming:
