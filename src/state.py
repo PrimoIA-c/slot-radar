@@ -32,14 +32,14 @@ from . import config, sources, taxonomy
 
 log = logging.getLogger(__name__)
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 
 def empty_state() -> dict:
     return {"version": SCHEMA_VERSION, "last_run": None, "entries": {}}
 
 
-def load() -> dict:
+def load(today: date | None = None) -> dict:
     if not config.STATE_FILE.exists():
         log.info("Aucun state.json : premier demarrage")
         return empty_state()
@@ -57,6 +57,7 @@ def load() -> dict:
     state.setdefault("last_run", None)
     state.setdefault("entries", {})
     _migrate(state)
+    _migrate_v3(state, today or date.today())
     log.info("state.json charge : %s entrees connues", len(state["entries"]))
     return state
 
@@ -92,6 +93,36 @@ def _migrate(state: dict) -> None:
         "Migration v2 : %s gain system normalise(s), %s lignes/ways extraites",
         converted,
         extracted,
+    )
+
+
+def _migrate_v3(state: dict, today: date) -> None:
+    """v2 -> v3 : distingue l'annonce de la sortie effective.
+
+    L'endpoint des nouveautes reference les jeux des leur annonce, souvent
+    des semaines avant leur mise en ligne. Un seul drapeau `notified` ne
+    permettait donc d'annoncer une slot qu'une fois, a l'annonce, et jamais
+    le jour de sa sortie reelle.
+
+    `released_notified` comble ce trou. Les entrees deja passees sont
+    considerees comme annoncees pour ne pas rejouer tout l'historique ; celles
+    datees dans le futur restent en attente de leur sortie.
+    """
+    if state.get("version", 1) >= 3:
+        return
+
+    waiting = 0
+    iso_today = today.isoformat()
+    for entry in state["entries"].values():
+        release = entry.get("release_date")
+        already_out = release is None or release <= iso_today
+        entry["released_notified"] = already_out
+        if not already_out:
+            waiting += 1
+
+    state["version"] = 3
+    log.info(
+        "Migration v3 : %s sortie(s) a venir en attente de leur date", waiting
     )
 
 
@@ -152,6 +183,9 @@ def merge(
             "date_source": source,
             "first_seen": iso_today,
             "notified": notified,
+            # Une entree datee dans le futur reste a annoncer le jour venu.
+            "released_notified": notified
+            or (stored_date is None or stored_date <= iso_today),
             **{field: entry.get(field) for field in sources.ATTRIBUTES},
         }
         added.append({"key": key, **state["entries"][key]})
@@ -185,24 +219,42 @@ def _refresh_attributes(stored: dict, incoming: dict) -> int:
     return filled
 
 
-def pending(state: dict) -> list[dict]:
-    """Entrees pas encore annoncees sur Telegram.
+def pending_released(state: dict, today: date) -> list[dict]:
+    """Slots effectivement sorties et pas encore annoncees comme telles."""
+    iso_today = today.isoformat()
+    return [
+        {"key": key, **value}
+        for key, value in state["entries"].items()
+        if not value.get("released_notified")
+        and (value.get("release_date") is None or value["release_date"] <= iso_today)
+    ]
 
-    Un echec d'envoi n'est donc jamais definitif : le run suivant reprendra
-    l'arriere en plus de ses propres nouveautes.
-    """
+
+def pending_upcoming(state: dict, today: date) -> list[dict]:
+    """Sorties annoncees pour plus tard, pas encore signalees."""
+    iso_today = today.isoformat()
     return [
         {"key": key, **value}
         for key, value in state["entries"].items()
         if not value.get("notified")
+        and value.get("release_date")
+        and value["release_date"] > iso_today
     ]
 
 
-def mark_notified(state: dict, entries: list[dict]) -> None:
+def mark_notified(state: dict, entries: list[dict], released: bool = False) -> None:
+    """Marque les entrees annoncees.
+
+    Le marquage n'a lieu qu'apres un envoi reussi : un echec laisse tout en
+    attente et le run suivant reprend l'arriere.
+    """
     for entry in entries:
         stored = state["entries"].get(entry["key"])
-        if stored is not None:
-            stored["notified"] = True
+        if stored is None:
+            continue
+        stored["notified"] = True
+        if released:
+            stored["released_notified"] = True
 
 
 def refresh_dates(state: dict, catalogue: list[dict]) -> int:

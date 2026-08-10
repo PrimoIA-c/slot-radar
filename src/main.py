@@ -85,7 +85,7 @@ def run(args: argparse.Namespace) -> int:
     )
 
     exit_code = 0
-    current = state.load()
+    current = state.load(today)
 
     # Garde quotidienne. Le cron tourne a deux heures UTC pour couvrir le
     # changement d'heure : sans cette garde, le second creneau relancerait un
@@ -156,7 +156,9 @@ def run(args: argparse.Namespace) -> int:
 
     # --- Notification ------------------------------------------------------
     should_notify = args.notify or today.weekday() == config.NOTIFY_WEEKDAY
-    waiting = state.pending(current)
+    released = state.pending_released(current, today)
+    upcoming = state.pending_upcoming(current, today)
+    waiting = released + upcoming
 
     if is_bootstrap:
         log.info(
@@ -174,9 +176,13 @@ def run(args: argparse.Namespace) -> int:
     elif not waiting:
         log.info("Jour d'envoi, mais aucune nouveaute a annoncer. Silence.")
     elif args.dry_run:
-        log.info("[dry-run] %s entree(s) auraient ete annoncees", len(waiting))
+        log.info(
+            "[dry-run] %s sortie(s) et %s a venir auraient ete annoncees",
+            len(released),
+            len(upcoming),
+        )
         print("\n--- Apercu du message ---")
-        print(notifier.build_message(waiting, today))
+        print(notifier.build_message(released, upcoming, today))
     elif not notifier.is_configured():
         log.warning(
             "TELEGRAM_BOT_TOKEN ou TELEGRAM_CHAT_ID absent : envoi impossible. "
@@ -185,7 +191,7 @@ def run(args: argparse.Namespace) -> int:
         )
     else:
         try:
-            notifier.send_message(notifier.build_message(waiting, today))
+            notifier.send_message(notifier.build_message(released, upcoming, today))
             if config.SEND_EXCEL:
                 notifier.send_document(
                     config.EXCEL_FILE,
@@ -197,9 +203,16 @@ def run(args: argparse.Namespace) -> int:
             log.error("Envoi echoue (%s). %s entree(s) reportees.", exc, len(waiting))
             exit_code = 1
         else:
-            # Marquage seulement apres succes complet.
-            state.mark_notified(current, waiting)
-            log.info("%s entree(s) annoncees et marquees", len(waiting))
+            # Marquage seulement apres succes complet. Les sorties effectives
+            # portent les deux drapeaux ; une annonce anticipee ne pose que
+            # `notified`, pour que la slot soit resignalee le jour de sa sortie.
+            state.mark_notified(current, released, released=True)
+            state.mark_notified(current, upcoming)
+            log.info(
+                "%s sortie(s) et %s a venir annoncees",
+                len(released),
+                len(upcoming),
+            )
 
     # --- Persistance -------------------------------------------------------
     current["last_run"] = today.isoformat()

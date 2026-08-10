@@ -53,16 +53,9 @@ def _fr_date(value: str | None) -> str:
         return value
 
 
-def build_message(entries: list[dict], today: date) -> str:
-    """Compose le recap, groupe par provider, providers tries alphabetiquement."""
-    count = len(entries)
-    plural = "s" if count > 1 else ""
-    lines = [
-        f"<b>Sorties slots — semaine du {today.strftime('%d/%m/%Y')}</b>",
-        f"{count} nouvelle{plural} sortie{plural}",
-        "",
-    ]
-
+def _provider_block(entries: list[dict]) -> list[str]:
+    """Groupe par provider, providers alphabetiques, dates croissantes."""
+    lines: list[str] = []
     by_provider: dict[str, list[dict]] = {}
     for entry in entries:
         by_provider.setdefault(entry.get("provider", "Inconnu"), []).append(entry)
@@ -71,25 +64,44 @@ def build_message(entries: list[dict], today: date) -> str:
         lines.append(f"<b>{html.escape(provider)}</b>")
         rows = sorted(
             by_provider[provider],
-            key=lambda item: (item.get("release_date") or "", item.get("name", "")),
-            reverse=True,
+            key=lambda item: (item.get("release_date") or "9999", item.get("name", "")),
         )
         for entry in rows:
             source = entry.get("date_source")
             if source == "inconnue" or not entry.get("release_date"):
-                date_label = "date inconnue"
-                marker = ""
+                label, marker = "date inconnue", ""
             else:
-                date_label = _fr_date(entry.get("release_date"))
-                # Une date deduite de la detection est signalee : elle n'a pas
-                # la meme fiabilite qu'une date publiee par le provider.
+                label = _fr_date(entry.get("release_date"))
+                # Une date deduite de la detection n'a pas la fiabilite d'une
+                # date publiee par le provider.
                 marker = "~" if source == "detection" else ""
-            lines.append(
-                f"  {marker}{date_label} — {html.escape(entry.get('name', '?'))}"
-            )
+            lines.append(f"  {marker}{label} — {html.escape(entry.get('name', '?'))}")
         lines.append("")
+    return lines
 
-    if any(entry.get("date_source") == "detection" for entry in entries):
+
+def build_message(
+    released: list[dict], upcoming: list[dict], today: date
+) -> str:
+    """Compose le recap en deux sections : deja sorties, puis a venir."""
+    lines = [f"<b>Sorties slots — semaine du {today.strftime('%d/%m/%Y')}</b>", ""]
+
+    if released:
+        plural = "s" if len(released) > 1 else ""
+        lines.append(f"<b>SORTIES ({len(released)})</b>")
+        lines.append(f"<i>Disponible{plural} maintenant</i>")
+        lines.append("")
+        lines += _provider_block(released)
+
+    if upcoming:
+        lines.append(f"<b>A VENIR ({len(upcoming)})</b>")
+        lines.append("<i>Annoncees, pas encore disponibles</i>")
+        lines.append("")
+        lines += _provider_block(upcoming)
+
+    if any(
+        e.get("date_source") == "detection" for e in list(released) + list(upcoming)
+    ):
         lines.append("<i>~ date de detection, non publiee par le provider</i>")
 
     return "\n".join(lines).strip()
