@@ -27463,7 +27463,7 @@
       "provider_slug": "foxium",
       "reels": 5,
       "release_date": "2026-08-11",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.37,
       "volatility": "Medium"
@@ -102609,6 +102609,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-10",
+  "last_run": "2026-08-12",
   "version": 3
 }
