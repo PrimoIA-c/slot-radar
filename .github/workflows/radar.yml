@@ -8,8 +8,8 @@ on:
   # La garde quotidienne cote script empeche le second creneau de refaire
   # le travail du premier.
   schedule:
-    - cron: "0 7 * * *"
-    - cron: "0 8 * * *"
+    - cron: "23 7 * * *"
+    - cron: "23 8 * * *"
 
   # Declenchement manuel, utile pour le bootstrap et les tests.
   workflow_dispatch:
