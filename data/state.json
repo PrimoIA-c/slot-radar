@@ -12861,6 +12861,24 @@
       "rtp": 96.43,
       "volatility": "High"
     },
+    "blueprint-gaming::almighty-mustang-express-white-bison": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 3500,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Almighty Mustang Express White Bison",
+      "notified": true,
+      "paylines": null,
+      "provider": "Blueprint Gaming",
+      "provider_slug": "blueprint-gaming",
+      "reels": 5,
+      "release_date": "2026-09-17",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 94.3,
+      "volatility": "Medium"
+    },
     "blueprint-gaming::andy-capp": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -18433,6 +18451,24 @@
       "released_notified": false,
       "rows": 4,
       "rtp": 96.26,
+      "volatility": "Medium"
+    },
+    "bullshark-games::boombear-bros": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 12000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Boombear Bros",
+      "notified": true,
+      "paylines": null,
+      "provider": "Bullshark Games",
+      "provider_slug": "bullshark-games",
+      "reels": 6,
+      "release_date": "2026-09-30",
+      "released_notified": false,
+      "rows": 6,
+      "rtp": 96.32,
       "volatility": "Medium"
     },
     "bullshark-games::bullride-loot": {
@@ -27075,6 +27111,24 @@
       "rtp": 94.0,
       "volatility": "Medium"
     },
+    "four-leaf-gaming::cosmic-rush-hyper-hitz": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Cosmic Rush Hyper Hitz",
+      "notified": true,
+      "paylines": null,
+      "provider": "Four Leaf Gaming",
+      "provider_slug": "four-leaf-gaming",
+      "reels": 5,
+      "release_date": "2026-09-10",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.09,
+      "volatility": "Low"
+    },
     "four-leaf-gaming::curse-of-ra": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -32999,6 +33053,24 @@
       "rows": 4,
       "rtp": 96.01,
       "volatility": "Medium"
+    },
+    "gaming-corps::3-pigs-of-independence": {
+      "date_source": "detection",
+      "first_seen": "2026-08-17",
+      "max_win": 5,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "3 Pigs of Independence",
+      "notified": false,
+      "paylines": null,
+      "provider": "Gaming Corps",
+      "provider_slug": "gaming-corps",
+      "reels": 5,
+      "release_date": "2026-08-17",
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 95.78,
+      "volatility": null
     },
     "gaming-corps::3-pigs-of-the-caribbean": {
       "date_source": "provider",
@@ -39305,6 +39377,24 @@
       "rtp": 96.3,
       "volatility": "High"
     },
+    "hacksaw-gaming::3-magic-piggy-banks-hold-win": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 2500,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "3 Magic Piggy Banks Hold & Win",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-09-22",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.3,
+      "volatility": "Medium"
+    },
     "hacksaw-gaming::aiko-and-the-wind-spirit": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -40422,6 +40512,24 @@
       "released_notified": true,
       "rows": 5,
       "rtp": 96.3,
+      "volatility": "High"
+    },
+    "hacksaw-gaming::fist-of-destruction-megamultiplier": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 15000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Fist of Destruction Megamultiplier",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-09-17",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.23,
       "volatility": "High"
     },
     "hacksaw-gaming::forest-fortune": {
@@ -60305,6 +60413,24 @@
       "rtp": 96.54,
       "volatility": "Medium"
     },
+    "playngo::chunky-carlos-money-mania": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 25000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Chunky Carlo's Money Mania",
+      "notified": true,
+      "paylines": null,
+      "provider": "Play'n GO",
+      "provider_slug": "playngo",
+      "reels": 5,
+      "release_date": "2026-09-24",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.2,
+      "volatility": "Medium low"
+    },
     "playngo::city-of-sound": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -66181,6 +66307,24 @@
       "rows": 4,
       "rtp": 96.24,
       "volatility": "High"
+    },
+    "playngo::triple-tumblin-totems": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Triple Tumblin' Totems",
+      "notified": true,
+      "paylines": null,
+      "provider": "Play'n GO",
+      "provider_slug": "playngo",
+      "reels": 5,
+      "release_date": "2026-11-05",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.2,
+      "volatility": "Medium high"
     },
     "playngo::troll-hunters": {
       "date_source": "provider",
@@ -93642,6 +93786,24 @@
       "rtp": 95.5,
       "volatility": "Medium high"
     },
+    "reflex-gaming::shamrock-shenanigans": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Shamrock Shenanigans",
+      "notified": true,
+      "paylines": null,
+      "provider": "Reflex Gaming",
+      "provider_slug": "reflex-gaming",
+      "reels": 5,
+      "release_date": "2026-09-15",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 95.5,
+      "volatility": "High"
+    },
     "reflex-gaming::thor-s-hammer-time": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -96937,6 +97099,24 @@
       "release_date": "28-05-2024",
       "released_notified": false,
       "rtp": 96.3,
+      "volatility": "High"
+    },
+    "stormcraft-studios::immortal-romance-assemblem": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 15500,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Immortal Romance Assembl'em",
+      "notified": true,
+      "paylines": null,
+      "provider": "Stormcraft Studios",
+      "provider_slug": "stormcraft-studios",
+      "reels": 5,
+      "release_date": "2026-09-30",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.0,
       "volatility": "High"
     },
     "stormcraft-studios::immortal-romance-vein-of-gold": {
@@ -100744,6 +100924,24 @@
       "rtp": 94.0,
       "volatility": "Medium"
     },
+    "yggdrasil::3-piggies-of-bank": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 5625,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "3 Piggies of Bank",
+      "notified": true,
+      "paylines": null,
+      "provider": "Yggdrasil",
+      "provider_slug": "yggdrasil",
+      "reels": 5,
+      "release_date": "2026-09-09",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 94.0,
+      "volatility": "Low"
+    },
     "yggdrasil::4-foxx-crew-wildenergy-multimax": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -101878,6 +102076,24 @@
       "rtp": 96.1,
       "volatility": "High"
     },
+    "yggdrasil::vikings-go-to-hollywood-wild-fight-rushingwilds": {
+      "date_source": "provider",
+      "first_seen": "2026-08-17",
+      "max_win": 6000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Vikings go to Hollywood Wild Fight RushingWilds",
+      "notified": true,
+      "paylines": null,
+      "provider": "Yggdrasil",
+      "provider_slug": "yggdrasil",
+      "reels": 5,
+      "release_date": "2026-09-22",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 94.0,
+      "volatility": "Medium high"
+    },
     "yggdrasil::vikings-go-to-olympus-wildfight-rushingwilds": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -102645,6 +102861,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-16",
+  "last_run": "2026-08-17",
   "version": 3
 }
