@@ -368,6 +368,24 @@
       "rtp": 94.0,
       "volatility": "High"
     },
+    "4theplayer::7x7-zeus-max": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 17650,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "7x7 Zeus Max",
+      "notified": true,
+      "paylines": null,
+      "provider": "4ThePlayer",
+      "provider_slug": "4theplayer",
+      "reels": 5,
+      "release_date": "2026-09-03",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 94.0,
+      "volatility": "High"
+    },
     "4theplayer::8k-ultra-gold-ultimate": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -14126,6 +14144,24 @@
       "rtp": 96.51,
       "volatility": "High"
     },
+    "blueprint-gaming::house-of-the-dragon": {
+      "date_source": "detection",
+      "first_seen": "2026-08-24",
+      "max_win": 3000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "House of the Dragon",
+      "notified": false,
+      "paylines": null,
+      "provider": "Blueprint Gaming",
+      "provider_slug": "blueprint-gaming",
+      "reels": 5,
+      "release_date": "2026-08-24",
+      "released_notified": true,
+      "rows": 4,
+      "rtp": 94.0,
+      "volatility": "Medium"
+    },
     "blueprint-gaming::imperial-dragon": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -17018,6 +17054,24 @@
       "release_date": "2016-06-16",
       "released_notified": true,
       "rows": 3
+    },
+    "booming-games::henhouse-hustle-hold-win": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 6000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Henhouse Hustle: Hold & Win",
+      "notified": false,
+      "paylines": null,
+      "provider": "Booming Games",
+      "provider_slug": "booming-games",
+      "reels": 5,
+      "release_date": "2026-07-23",
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 95.8,
+      "volatility": "Medium high"
     },
     "booming-games::holly-jolly-bonanza": {
       "date_source": "provider",
@@ -30550,6 +30604,24 @@
       "rtp": 96.0,
       "volatility": "Medium"
     },
+    "gameburger-studios::12-masks-of-fire-eruption-prize-flow": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "12 Masks of Fire Eruption Prize Flow",
+      "notified": true,
+      "paylines": null,
+      "provider": "Gameburger Studios",
+      "provider_slug": "gameburger-studios",
+      "reels": 5,
+      "release_date": "2026-09-24",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.0,
+      "volatility": "High"
+    },
     "gameburger-studios::12-masks-of-fire-night-fever": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -40273,6 +40345,24 @@
       "rtp": 96.38,
       "volatility": "Medium"
     },
+    "hacksaw-gaming::dr-zappo": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Dr Zappo",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-09-29",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.31,
+      "volatility": "Medium"
+    },
     "hacksaw-gaming::dragons-domain": {
       "date_source": "inconnue",
       "first_seen": "2026-08-07",
@@ -41143,6 +41233,24 @@
       "rtp": 96.14,
       "volatility": "Medium"
     },
+    "hacksaw-gaming::le-clubber": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Le Clubber",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 6,
+      "release_date": "2026-11-03",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.34,
+      "volatility": "High"
+    },
     "hacksaw-gaming::le-cowboy": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -41293,6 +41401,24 @@
       "rows": 5,
       "rtp": 96.14,
       "volatility": "High"
+    },
+    "hacksaw-gaming::le-vampire": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 15000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Le Vampire",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 6,
+      "release_date": "2026-10-01",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.36,
+      "volatility": "Medium"
     },
     "hacksaw-gaming::le-viking": {
       "date_source": "provider",
@@ -57308,6 +57434,24 @@
       "rtp": 96.23,
       "volatility": "Medium"
     },
+    "nownow-gaming::outlaw-rooster": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Outlaw Rooster",
+      "notified": true,
+      "paylines": null,
+      "provider": "NowNow Gaming",
+      "provider_slug": "nownow-gaming",
+      "reels": 5,
+      "release_date": "2026-09-10",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.37,
+      "volatility": "Medium"
+    },
     "nownow-gaming::shadow-treasure": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -57411,6 +57555,24 @@
       "rows": 5,
       "rtp": 96.26,
       "volatility": "High"
+    },
+    "nownow-gaming::triumph-of-the-3-gods": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Triumph Of The 3 Gods",
+      "notified": true,
+      "paylines": null,
+      "provider": "NowNow Gaming",
+      "provider_slug": "nownow-gaming",
+      "reels": 5,
+      "release_date": "2026-09-30",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.32,
+      "volatility": "Medium"
     },
     "octoplay::3-blazing-buffalos-hold-win": {
       "date_source": "provider",
@@ -64675,6 +64837,24 @@
       "rtp": 96.2,
       "volatility": "Very high"
     },
+    "playngo::redtail-robber-cash-vault-heist": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 15000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Redtail Robber Cash Vault Heist",
+      "notified": true,
+      "paylines": null,
+      "provider": "Play'n GO",
+      "provider_slug": "playngo",
+      "reels": 5,
+      "release_date": "2026-09-07",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.2,
+      "volatility": "High"
+    },
     "playngo::return-of-the-green-knight": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -70719,6 +70899,24 @@
       "rtp": 96.63,
       "volatility": "Low"
     },
+    "pragmatic-play::bubble-up": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Bubble Up!",
+      "notified": false,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 6,
+      "release_date": "2026-08-24",
+      "released_notified": true,
+      "rows": 6,
+      "rtp": 96.52,
+      "volatility": "High"
+    },
     "pragmatic-play::buffalo-king": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -72507,6 +72705,24 @@
       "provider_slug": "pragmatic-play",
       "release_date": "30.01.2025",
       "released_notified": false,
+      "rtp": 96.5,
+      "volatility": "Medium"
+    },
+    "pragmatic-play::eternal-diamonds": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 20000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Eternal Diamonds",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 5,
+      "release_date": "2026-09-10",
+      "released_notified": false,
+      "rows": 3,
       "rtp": 96.5,
       "volatility": "Medium"
     },
@@ -81344,6 +81560,24 @@
       "released_notified": true,
       "rtp": 96.51,
       "volatility": "High"
+    },
+    "pragmatic-play::triple-hop-pots": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Triple Hop Pots",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 3,
+      "release_date": "2026-09-15",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.5,
+      "volatility": "Low"
     },
     "pragmatic-play::triple-jokers": {
       "date_source": "provider",
@@ -98783,6 +99017,24 @@
       "rtp": 96.16,
       "volatility": "High"
     },
+    "thunderkick::hot-potato-battleground": {
+      "date_source": "provider",
+      "first_seen": "2026-08-24",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Hot Potato Battleground",
+      "notified": true,
+      "paylines": null,
+      "provider": "Thunderkick",
+      "provider_slug": "thunderkick",
+      "reels": 7,
+      "release_date": "2026-09-16",
+      "released_notified": false,
+      "rows": 7,
+      "rtp": 94.23,
+      "volatility": "High"
+    },
     "thunderkick::hot-turkey": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -102951,6 +103203,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-23",
+  "last_run": "2026-08-24",
   "version": 3
 }
