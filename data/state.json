@@ -20924,7 +20924,7 @@
       "provider_slug": "elk-studios",
       "reels": 5,
       "release_date": "2026-08-25",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 96.0,
       "volatility": "Medium high"
@@ -39584,7 +39584,7 @@
       "provider_slug": "hacksaw-gaming",
       "reels": 6,
       "release_date": "2026-08-25",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 96.28,
       "volatility": "Medium"
@@ -66688,7 +66688,7 @@
       "provider_slug": "playngo",
       "reels": 6,
       "release_date": "2026-08-25",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 96.2,
       "volatility": "High"
@@ -82911,7 +82911,7 @@
       "provider_slug": "print-studios",
       "reels": 5,
       "release_date": "2026-08-25",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.22,
       "volatility": "High"
@@ -83362,7 +83362,7 @@
       "provider_slug": "push-gaming",
       "reels": 6,
       "release_date": "2026-08-25",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.23,
       "volatility": "Medium low"
@@ -103203,6 +103203,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-24",
+  "last_run": "2026-08-25",
   "version": 3
 }
