@@ -26805,7 +26805,7 @@
       "provider_slug": "fortune-factory-studios",
       "reels": 5,
       "release_date": "2026-08-27",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.1,
       "volatility": "High"
@@ -41657,7 +41657,7 @@
       "provider_slug": "hacksaw-gaming",
       "reels": 5,
       "release_date": "2026-08-27",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.31,
       "volatility": "Medium"
@@ -57625,6 +57625,24 @@
       "rtp": 95.74,
       "volatility": "Low"
     },
+    "octoplay::3-mad-mummies-hold-win": {
+      "date_source": "provider",
+      "first_seen": "2026-08-27",
+      "max_win": 4040,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "3 Mad Mummies: Hold & Win",
+      "notified": false,
+      "paylines": null,
+      "provider": "Octoplay",
+      "provider_slug": "octoplay",
+      "reels": 5,
+      "release_date": "2026-08-26",
+      "released_notified": true,
+      "rows": 4,
+      "rtp": 95.81,
+      "volatility": "Low"
+    },
     "octoplay::3-pyramids-of-gold": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -72533,7 +72551,7 @@
       "provider_slug": "pragmatic-play",
       "reels": 5,
       "release_date": "2026-08-27",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 96.53,
       "volatility": "Medium"
@@ -94092,7 +94110,7 @@
       "provider_slug": "reflex-gaming",
       "reels": 5,
       "release_date": "2026-08-27",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 3,
       "rtp": 95.5,
       "volatility": "Medium high"
@@ -103239,6 +103257,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-26",
+  "last_run": "2026-08-27",
   "version": 3
 }
