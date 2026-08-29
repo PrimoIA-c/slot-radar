@@ -57778,6 +57778,24 @@
       "rtp": 95.76,
       "volatility": "Low"
     },
+    "octoplay::cash-storm-hold-win": {
+      "date_source": "provider",
+      "first_seen": "2026-08-29",
+      "max_win": 2250,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Cash Storm: Hold & Win",
+      "notified": false,
+      "paylines": null,
+      "provider": "Octoplay",
+      "provider_slug": "octoplay",
+      "reels": 3,
+      "release_date": "2026-08-19",
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 95.74,
+      "volatility": "Low"
+    },
     "octoplay::cod-chaos-golden-catch": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -58199,6 +58217,24 @@
       "released_notified": true,
       "rows": 3,
       "rtp": 95.78,
+      "volatility": "Low"
+    },
+    "octoplay::super-fire-rail-express": {
+      "date_source": "provider",
+      "first_seen": "2026-08-29",
+      "max_win": 4300,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Super Fire Rail Express",
+      "notified": false,
+      "paylines": null,
+      "provider": "Octoplay",
+      "provider_slug": "octoplay",
+      "reels": 3,
+      "release_date": "2026-08-19",
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 95.8,
       "volatility": "Low"
     },
     "octoplay::the-grand-rooster": {
@@ -103257,6 +103293,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-28",
+  "last_run": "2026-08-29",
   "version": 3
 }
