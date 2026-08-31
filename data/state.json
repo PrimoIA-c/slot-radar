@@ -11513,6 +11513,24 @@
       "rtp": 96.82,
       "volatility": "High"
     },
+    "big-time-gaming::extra-chilli-more-chilli": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 30000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Extra Chilli More Chilli",
+      "notified": true,
+      "paylines": null,
+      "provider": "Big Time Gaming",
+      "provider_slug": "big-time-gaming",
+      "reels": null,
+      "release_date": "2026-09-23",
+      "released_notified": false,
+      "rows": null,
+      "rtp": 96.39,
+      "volatility": "High"
+    },
     "big-time-gaming::extra-chilli-tapcards": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -13652,6 +13670,24 @@
       "rows": 5,
       "rtp": 95.49,
       "volatility": "Medium high"
+    },
+    "blueprint-gaming::eye-of-horus-megaways-gold-spins": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10100,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Eye of Horus Megaways Gold Spins",
+      "notified": true,
+      "paylines": null,
+      "provider": "Blueprint Gaming",
+      "provider_slug": "blueprint-gaming",
+      "reels": null,
+      "release_date": "2026-09-03",
+      "released_notified": false,
+      "rows": null,
+      "rtp": 94.0,
+      "volatility": "Medium"
     },
     "blueprint-gaming::eye-of-horus-power-4-slots": {
       "date_source": "provider",
@@ -19716,6 +19752,24 @@
       "rtp": 94.0,
       "volatility": "High"
     },
+    "elk-studios::bamboo-pandits": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Bamboo Pandits",
+      "notified": true,
+      "paylines": null,
+      "provider": "ELK Studios",
+      "provider_slug": "elk-studios",
+      "reels": null,
+      "release_date": "2026-10-06",
+      "released_notified": false,
+      "rows": null,
+      "rtp": 96.0,
+      "volatility": "Medium high"
+    },
     "elk-studios::birthday": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -20023,6 +20077,24 @@
       "released_notified": true,
       "rtp": 94.0,
       "volatility": "High"
+    },
+    "elk-studios::concrete-cowboys": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Concrete Cowboys",
+      "notified": true,
+      "paylines": null,
+      "provider": "ELK Studios",
+      "provider_slug": "elk-studios",
+      "reels": 5,
+      "release_date": "2026-09-24",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.0,
+      "volatility": "Medium high"
     },
     "elk-studios::cooked": {
       "date_source": "provider",
@@ -25982,6 +26054,24 @@
       "released_notified": true,
       "rows": 4,
       "rtp": 96.0,
+      "volatility": "High"
+    },
+    "fantasma-games::3-bandits": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "3 Bandits",
+      "notified": true,
+      "paylines": null,
+      "provider": "Fantasma Games",
+      "provider_slug": "fantasma-games",
+      "reels": 6,
+      "release_date": "2026-11-17",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.18,
       "volatility": "High"
     },
     "fantasma-games::alice-in-adventureland-fantasma": {
@@ -49609,6 +49699,24 @@
       "rtp": 96.31,
       "volatility": "Medium high"
     },
+    "kitsune-studios::max-the-mathmagician": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Max The Mathmagician",
+      "notified": true,
+      "paylines": null,
+      "provider": "Kitsune Studios",
+      "provider_slug": "kitsune-studios",
+      "reels": 5,
+      "release_date": "2026-10-26",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.34,
+      "volatility": "Medium high"
+    },
     "kitsune-studios::miss-candys-sweet-escape": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -57504,6 +57612,24 @@
       "rtp": 96.26,
       "volatility": "Medium"
     },
+    "nownow-gaming::space-mutants": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Space Mutants",
+      "notified": true,
+      "paylines": null,
+      "provider": "NowNow Gaming",
+      "provider_slug": "nownow-gaming",
+      "reels": 6,
+      "release_date": "2026-09-18",
+      "released_notified": false,
+      "rows": 6,
+      "rtp": 96.31,
+      "volatility": "Medium"
+    },
     "nownow-gaming::street-knockout": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -57693,6 +57819,24 @@
       "rows": 3,
       "rtp": 95.76,
       "volatility": "Low"
+    },
+    "octoplay::777-hot-reels-ultracharged": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 8000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "777 Hot Reels: Ultracharged",
+      "notified": true,
+      "paylines": null,
+      "provider": "Octoplay",
+      "provider_slug": "octoplay",
+      "reels": 5,
+      "release_date": "2026-09-16",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 95.78,
+      "volatility": "Medium high"
     },
     "octoplay::anubis-ascension": {
       "date_source": "provider",
@@ -70393,6 +70537,24 @@
       "rtp": 96.5,
       "volatility": "High"
     },
+    "pragmatic-play::big-bass-vegas-1000": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 15000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Big Bass Vegas 1000",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 5,
+      "release_date": "2026-09-24",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.53,
+      "volatility": null
+    },
     "pragmatic-play::big-bass-vegas-double-down-deluxe": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -71789,6 +71951,24 @@
       "released_notified": true,
       "rtp": 96.07,
       "volatility": "High"
+    },
+    "pragmatic-play::coven-rising": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Coven Rising",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": null,
+      "release_date": "2026-09-17",
+      "released_notified": false,
+      "rows": null,
+      "rtp": 96.42,
+      "volatility": "Medium"
     },
     "pragmatic-play::cowboy-coins": {
       "date_source": "provider",
@@ -73718,6 +73898,24 @@
       "rtp": 96.42,
       "volatility": "High"
     },
+    "pragmatic-play::freya-1000": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Freya 1000",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 5,
+      "release_date": "2026-09-21",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.5,
+      "volatility": "High"
+    },
     "pragmatic-play::frightening-frankie": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -74187,7 +74385,7 @@
       "provider_slug": "pragmatic-play",
       "reels": 3,
       "release_date": "2026-08-31",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 97.05,
       "volatility": "Medium"
@@ -75103,7 +75301,7 @@
       "provider_slug": "pragmatic-play",
       "reels": 6,
       "release_date": "2026-08-31",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 96.5,
       "volatility": "Medium"
@@ -94687,6 +94885,24 @@
       "rtp": 94.0,
       "volatility": "Medium high"
     },
+    "relax-gaming::cloudforge": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Cloudforge",
+      "notified": true,
+      "paylines": null,
+      "provider": "Relax Gaming",
+      "provider_slug": "relax-gaming",
+      "reels": 6,
+      "release_date": "2026-10-15",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.1,
+      "volatility": "Medium high"
+    },
     "relax-gaming::cluster-tumble": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -95649,6 +95865,24 @@
       "rows": 6,
       "rtp": 96.1,
       "volatility": "Very high"
+    },
+    "relax-gaming::money-train-5": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 100000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Money Train 5",
+      "notified": true,
+      "paylines": null,
+      "provider": "Relax Gaming",
+      "provider_slug": "relax-gaming",
+      "reels": 5,
+      "release_date": "2026-09-24",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.1,
+      "volatility": "High"
     },
     "relax-gaming::mow-money": {
       "date_source": "provider",
@@ -101157,6 +101391,24 @@
       "rtp": 96.23,
       "volatility": "Medium"
     },
+    "wicked-games::hamsterdam": {
+      "date_source": "provider",
+      "first_seen": "2026-08-31",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Hamsterdam",
+      "notified": true,
+      "paylines": null,
+      "provider": "Wicked Games",
+      "provider_slug": "wicked-games",
+      "reels": 5,
+      "release_date": "2026-09-21",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.1,
+      "volatility": "Medium high"
+    },
     "wicked-games::holly": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -103293,6 +103545,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-30",
+  "last_run": "2026-08-31",
   "version": 3
 }
