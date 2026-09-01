@@ -20567,7 +20567,7 @@
       "provider_slug": "elk-studios",
       "reels": null,
       "release_date": "2026-09-01",
-      "released_notified": false,
+      "released_notified": true,
       "rows": null,
       "rtp": 96.0,
       "volatility": "Medium high"
@@ -27902,7 +27902,7 @@
       "provider_slug": "foxium",
       "reels": 5,
       "release_date": "2026-09-01",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.1,
       "volatility": "High"
@@ -103545,6 +103545,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-08-31",
+  "last_run": "2026-09-01",
   "version": 3
 }
