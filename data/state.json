@@ -381,7 +381,7 @@
       "provider_slug": "4theplayer",
       "reels": 5,
       "release_date": "2026-09-03",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 94.0,
       "volatility": "High"
@@ -13684,7 +13684,7 @@
       "provider_slug": "blueprint-gaming",
       "reels": null,
       "release_date": "2026-09-03",
-      "released_notified": false,
+      "released_notified": true,
       "rows": null,
       "rtp": 94.0,
       "volatility": "Medium"
@@ -26507,7 +26507,7 @@
       "provider_slug": "fantasma-games",
       "reels": 6,
       "release_date": "2026-09-03",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 96.33,
       "volatility": "Medium high"
@@ -42824,7 +42824,7 @@
       "provider_slug": "hacksaw-gaming",
       "reels": 5,
       "release_date": "2026-09-03",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 3,
       "rtp": 96.26,
       "volatility": "Medium"
@@ -78967,7 +78967,7 @@
       "provider_slug": "pragmatic-play",
       "reels": 5,
       "release_date": "2026-09-03",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 5,
       "rtp": 96.53,
       "volatility": "High"
@@ -95969,6 +95969,24 @@
       "rtp": 96.1,
       "volatility": "High"
     },
+    "relax-gaming::nugget-ridge": {
+      "date_source": "provider",
+      "first_seen": "2026-09-03",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Nugget Ridge",
+      "notified": false,
+      "paylines": null,
+      "provider": "Relax Gaming",
+      "provider_slug": "relax-gaming",
+      "reels": 5,
+      "release_date": "2026-09-03",
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 96.36,
+      "volatility": "Medium low"
+    },
     "relax-gaming::olympus-7s-dream-drop": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -103545,6 +103563,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-01",
+  "last_run": "2026-09-03",
   "version": 3
 }
