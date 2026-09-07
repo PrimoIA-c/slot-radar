@@ -1258,6 +1258,24 @@
       "rtp": 96.24,
       "volatility": "High"
     },
+    "all-for-one-studios::give-me-gold-explode-power-combo": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 14750,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Give Me Gold & Explode Power Combo",
+      "notified": true,
+      "paylines": null,
+      "provider": "All For One Studios",
+      "provider_slug": "all-for-one-studios",
+      "reels": 5,
+      "release_date": "2026-10-06",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.2,
+      "volatility": "High"
+    },
     "all-for-one-studios::give-me-gold-mo-fish-slot-demo-by-all-for-one-studios": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -1722,6 +1740,24 @@
       "released_notified": true,
       "rows": 4,
       "rtp": 95.77,
+      "volatility": "Medium high"
+    },
+    "avatar-ux::blondes-beers": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 15000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Blondes & Beers",
+      "notified": true,
+      "paylines": null,
+      "provider": "Avatar UX",
+      "provider_slug": "avatar-ux",
+      "reels": 3,
+      "release_date": "2026-09-25",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 95.99,
       "volatility": "Medium high"
     },
     "avatar-ux::cherrypop": {
@@ -15260,6 +15296,24 @@
       "rtp": 95.67,
       "volatility": "Medium"
     },
+    "blueprint-gaming::ted-stuffed-loaded": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Ted Stuffed & Loaded",
+      "notified": true,
+      "paylines": null,
+      "provider": "Blueprint Gaming",
+      "provider_slug": "blueprint-gaming",
+      "reels": 5,
+      "release_date": "2026-10-15",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 94.0,
+      "volatility": "Medium"
+    },
     "blueprint-gaming::temple-of-treasure-megaways": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -16826,6 +16880,24 @@
       "rows": 3,
       "rtp": 96.1,
       "volatility": "High"
+    },
+    "booming-games::fortune-surge": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 2000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Fortune Surge",
+      "notified": false,
+      "paylines": null,
+      "provider": "Booming Games",
+      "provider_slug": "booming-games",
+      "reels": 3,
+      "release_date": "2026-08-13",
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 96.1,
+      "volatility": "Medium high"
     },
     "booming-games::gamblelicious-hold-and-win": {
       "date_source": "provider",
@@ -18495,6 +18567,24 @@
       "rtp": 96.16,
       "volatility": "High"
     },
+    "bullshark-games::arctic-duel": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Arctic Duel",
+      "notified": true,
+      "paylines": null,
+      "provider": "Bullshark Games",
+      "provider_slug": "bullshark-games",
+      "reels": 5,
+      "release_date": "2026-10-15",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.3,
+      "volatility": "Medium high"
+    },
     "bullshark-games::arena-of-iron": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -18751,6 +18841,24 @@
       "released_notified": true,
       "rows": 7,
       "rtp": 96.29,
+      "volatility": "High"
+    },
+    "bullshark-games::doctor-dust": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 12000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Doctor Dust",
+      "notified": true,
+      "paylines": null,
+      "provider": "Bullshark Games",
+      "provider_slug": "bullshark-games",
+      "reels": 5,
+      "release_date": "2026-10-26",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.3,
       "volatility": "High"
     },
     "bullshark-games::empress-of-the-shadows": {
@@ -42689,6 +42797,24 @@
       "rtp": 96.36,
       "volatility": "High"
     },
+    "hacksaw-gaming::the-jade-path-hold-win": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 2500,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "The Jade Path Hold & Win",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-10-15",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.19,
+      "volatility": "Medium"
+    },
     "hacksaw-gaming::the-luxe": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -50446,6 +50572,24 @@
       "released_notified": false,
       "rtp": 96.2,
       "volatility": "Low"
+    },
+    "neon-valley-studios::cash-abduction-5000x-gold-blitz-fusion": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Cash Abduction 5000X Gold Blitz Fusion",
+      "notified": true,
+      "paylines": null,
+      "provider": "Neon Valley Studios",
+      "provider_slug": "neon-valley-studios",
+      "reels": null,
+      "release_date": "2026-10-15",
+      "released_notified": false,
+      "rows": null,
+      "rtp": 96.17,
+      "volatility": "Medium"
     },
     "neon-valley-studios::gallo-gold-bruno-s-megaways": {
       "date_source": "provider",
@@ -65066,7 +65210,7 @@
       "provider_slug": "playngo",
       "reels": 5,
       "release_date": "2026-09-07",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.2,
       "volatility": "High"
@@ -73691,6 +73835,24 @@
       "released_notified": true,
       "rows": 3
     },
+    "pragmatic-play::forever-split-megaways": {
+      "date_source": "detection",
+      "first_seen": "2026-09-07",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Forever Split Megaways",
+      "notified": false,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 6,
+      "release_date": "2026-09-07",
+      "released_notified": true,
+      "rows": 5,
+      "rtp": 96.58,
+      "volatility": "Medium"
+    },
     "pragmatic-play::forge-of-olympus": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -74338,6 +74500,24 @@
       "released_notified": true,
       "rows": 5,
       "rtp": 96.5,
+      "volatility": "High"
+    },
+    "pragmatic-play::gates-of-olympus-2500": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 25000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Gates of Olympus 2500",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 6,
+      "release_date": "2026-09-28",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.52,
       "volatility": "High"
     },
     "pragmatic-play::gates-of-olympus-dice": {
@@ -76921,6 +77101,24 @@
       "released_notified": true,
       "rtp": 95.19,
       "volatility": "Medium"
+    },
+    "pragmatic-play::lucky-drums-88": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 20000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Lucky Drums 88",
+      "notified": false,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 5,
+      "release_date": "2026-09-07",
+      "released_notified": true,
+      "rows": 5,
+      "rtp": 96.53,
+      "volatility": "High"
     },
     "pragmatic-play::lucky-fortune-tree": {
       "date_source": "provider",
@@ -84170,6 +84368,24 @@
       "rtp": 96.46,
       "volatility": "Low"
     },
+    "push-gaming::flaming-streaks": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 1150,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Flaming Streaks",
+      "notified": true,
+      "paylines": null,
+      "provider": "Push Gaming",
+      "provider_slug": "push-gaming",
+      "reels": 3,
+      "release_date": "2026-11-04",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.35,
+      "volatility": "Low"
+    },
     "push-gaming::generous-jack": {
       "date_source": "inconnue",
       "first_seen": "2026-08-07",
@@ -84535,6 +84751,24 @@
       "released_notified": true,
       "rtp": 96.3,
       "volatility": "Medium"
+    },
+    "push-gaming::razor-extreme": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Razor Extreme",
+      "notified": true,
+      "paylines": null,
+      "provider": "Push Gaming",
+      "provider_slug": "push-gaming",
+      "reels": 5,
+      "release_date": "2026-11-18",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.27,
+      "volatility": "High"
     },
     "push-gaming::razor-returns": {
       "date_source": "provider",
@@ -101594,6 +101828,24 @@
       "rtp": 96.09,
       "volatility": "Medium"
     },
+    "wishbone-games::phoenix-reign-of-horror": {
+      "date_source": "provider",
+      "first_seen": "2026-09-07",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Phoenix Reign of Horror",
+      "notified": true,
+      "paylines": null,
+      "provider": "Wishbone Games",
+      "provider_slug": "wishbone-games",
+      "reels": 5,
+      "release_date": "2026-10-14",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.09,
+      "volatility": "Medium"
+    },
     "wishbone-games::thor-unleashed": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -103563,6 +103815,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-06",
+  "last_run": "2026-09-07",
   "version": 3
 }
