@@ -101891,7 +101891,7 @@
       "provider_slug": "yggdrasil",
       "reels": 5,
       "release_date": "2026-09-09",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 3,
       "rtp": 94.0,
       "volatility": "Low"
@@ -103815,6 +103815,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-08",
+  "last_run": "2026-09-09",
   "version": 3
 }
