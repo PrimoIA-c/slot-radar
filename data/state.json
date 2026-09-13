@@ -101624,7 +101624,7 @@
       "provider_slug": "wicked-games",
       "reels": 6,
       "release_date": "2026-09-13",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 6,
       "rtp": 96.11,
       "volatility": "High"
@@ -103851,6 +103851,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-12",
+  "last_run": "2026-09-13",
   "version": 3
 }
