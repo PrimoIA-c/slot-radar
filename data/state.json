@@ -416,6 +416,24 @@
       "rtp": 95.5,
       "volatility": "High"
     },
+    "4theplayer::9k-wild-yeti": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 9000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "9K Wild Yeti",
+      "notified": true,
+      "paylines": null,
+      "provider": "4ThePlayer",
+      "provider_slug": "4theplayer",
+      "reels": 5,
+      "release_date": "2026-11-12",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.01,
+      "volatility": "Medium"
+    },
     "4theplayer::fluffy-fishin": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -40210,6 +40228,24 @@
       "rtp": 96.24,
       "volatility": "High"
     },
+    "hacksaw-gaming::coffee-dealer": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Coffee Dealer",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-10-20",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.29,
+      "volatility": "Medium high"
+    },
     "hacksaw-gaming::colors": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -40397,6 +40433,24 @@
       "released_notified": true,
       "rows": 4,
       "rtp": 96.34,
+      "volatility": "Medium"
+    },
+    "hacksaw-gaming::demonic-dolls": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Demonic Dolls",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-10-06",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.26,
       "volatility": "Medium"
     },
     "hacksaw-gaming::densho": {
@@ -40676,6 +40730,24 @@
       "released_notified": true,
       "rows": 5,
       "rtp": 96.24,
+      "volatility": "High"
+    },
+    "hacksaw-gaming::epic-sixsixsix": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 20666,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Epic SixSixSix",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-10-22",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.27,
       "volatility": "High"
     },
     "hacksaw-gaming::epic-ze-zeus": {
@@ -67514,6 +67586,24 @@
       "rtp": 96.0,
       "volatility": "High"
     },
+    "playtech::big-bad-wolf-high-steaks": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Big Bad Wolf: High Steaks",
+      "notified": true,
+      "paylines": null,
+      "provider": "PlayTech",
+      "provider_slug": "playtech",
+      "reels": 5,
+      "release_date": "2026-09-22",
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 95.83,
+      "volatility": "Medium high"
+    },
     "playtech::blue-wizard-cash-collect-link": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -71743,6 +71833,24 @@
       "rtp": 96.0,
       "volatility": "Very high"
     },
+    "pragmatic-play::cheetah-wild": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Cheetah Wild",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 5,
+      "release_date": "2026-10-08",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.5,
+      "volatility": "Low"
+    },
     "pragmatic-play::chests-of-cai-chen-2": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -72384,6 +72492,24 @@
       "released_notified": true,
       "rows": 5,
       "rtp": 96.54,
+      "volatility": "Medium"
+    },
+    "pragmatic-play::deep-sea-frenzy": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 16000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Deep Sea Frenzy",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 5,
+      "release_date": "2026-10-05",
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.52,
       "volatility": "Medium"
     },
     "pragmatic-play::demon-pots": {
@@ -75519,6 +75645,24 @@
       "released_notified": false,
       "rtp": 96.0,
       "volatility": "High"
+    },
+    "pragmatic-play::helios-triple-sun": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Helios Triple Sun",
+      "notified": false,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 6,
+      "release_date": "2026-09-14",
+      "released_notified": true,
+      "rows": 5,
+      "rtp": 96.56,
+      "volatility": "Medium"
     },
     "pragmatic-play::hell-butcher": {
       "date_source": "provider",
@@ -78718,6 +78862,24 @@
       "released_notified": false,
       "rtp": 96.5,
       "volatility": "Very high"
+    },
+    "pragmatic-play::pelican-payday": {
+      "date_source": "provider",
+      "first_seen": "2026-09-14",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Pelican Payday",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 3,
+      "release_date": "2026-10-06",
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 96.59,
+      "volatility": "Low"
     },
     "pragmatic-play::penguins-christmas-party-time": {
       "date_source": "provider",
@@ -103851,6 +104013,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-13",
+  "last_run": "2026-09-14",
   "version": 3
 }
