@@ -41463,7 +41463,7 @@
       "provider_slug": "hacksaw-gaming",
       "reels": 3,
       "release_date": "2026-09-15",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 3,
       "rtp": 97.48,
       "volatility": "Medium"
@@ -82222,7 +82222,7 @@
       "provider_slug": "pragmatic-play",
       "reels": 3,
       "release_date": "2026-09-15",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 3,
       "rtp": 96.5,
       "volatility": "Low"
@@ -94807,7 +94807,7 @@
       "provider_slug": "reflex-gaming",
       "reels": 5,
       "release_date": "2026-09-15",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 95.5,
       "volatility": "High"
@@ -104013,6 +104013,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-14",
+  "last_run": "2026-09-15",
   "version": 3
 }
