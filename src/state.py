@@ -28,11 +28,11 @@ import json
 import logging
 from datetime import date
 
-from . import config, sources, taxonomy
+from . import config, dates, sources, taxonomy
 
 log = logging.getLogger(__name__)
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 
 def empty_state() -> dict:
@@ -58,6 +58,7 @@ def load(today: date | None = None) -> dict:
     state.setdefault("entries", {})
     _migrate(state)
     _migrate_v3(state, today or date.today())
+    _migrate_v4(state, today or date.today())
     log.info("state.json charge : %s entrees connues", len(state["entries"]))
     return state
 
@@ -126,6 +127,75 @@ def _migrate_v3(state: dict, today: date) -> None:
     )
 
 
+def _migrate_v4(state: dict, today: date) -> None:
+    """v3 -> v4 : ramene les dates de sortie en ISO.
+
+    1781 entrees sur 6350 portaient une date non ISO, heritee du decoupage a
+    dix caracteres de sources.py. Le detail des formes est dans dates.py.
+
+    Deux precautions.
+
+    Une date corrigee n'est pas une annonce. Sans marquage, toute entree dont
+    la date devient une date passee entrerait d'un coup dans
+    `pending_released()` et le prochain run deverserait le lot sur Telegram.
+    Ces entrees sont donc marquees comme deja annoncees : on corrige la
+    donnee, on ne rejoue pas l'historique. C'est la meme politique qu'a
+    l'insertion, ou une entree arrivant deja sortie est marquee de meme.
+
+    Une sortie encore a venir garde ses drapeaux intacts. Sa date etait fausse
+    mais son avenir est reel : elle sera annoncee le jour venu, cette fois
+    avec la bonne date.
+
+    Une date partielle ("2019") ne peut pas etre completee : la date devient
+    vide, `date_source` passe a `inconnue` et la valeur publiee est conservee
+    dans `release_date_raw`. Inventer un 1er janvier serait une date fausse
+    recopiee ensuite dans le dashboard.
+    """
+    if state.get("version", 1) >= 4:
+        return
+
+    corrigees = 0
+    videes = 0
+    a_venir = 0
+    iso_today = today.isoformat()
+
+    for entry in state["entries"].values():
+        publiee = entry.get("release_date")
+        if not publiee:
+            continue
+        iso = dates.to_iso(publiee)
+        if iso == publiee:
+            continue
+
+        entry["release_date"] = iso
+
+        if iso is None:
+            # La valeur publiee est tout ce qui reste : on la garde pour
+            # qu'elle soit consultable a l'ecran.
+            entry["release_date_raw"] = publiee
+            entry["date_source"] = "inconnue"
+            videes += 1
+        elif iso > iso_today:
+            # Sortie reellement a venir : on ne touche pas aux drapeaux.
+            corrigees += 1
+            a_venir += 1
+            continue
+        else:
+            corrigees += 1
+
+        entry["notified"] = True
+        entry["released_notified"] = True
+
+    state["version"] = 4
+    log.info(
+        "Migration v4 : %s date(s) ramenee(s) en ISO (dont %s a venir, "
+        "laissee(s) a annoncer), %s date(s) partielle(s) videe(s)",
+        corrigees,
+        a_venir,
+        videes,
+    )
+
+
 def save(state: dict) -> None:
     config.DATA_DIR.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True)
@@ -168,8 +238,14 @@ def merge(
             continue
 
         release_date = entry["release_date"]
+        publiee = entry.get("release_date_raw")
         if release_date:
             stored_date, source = release_date, "provider"
+        elif publiee:
+            # L'API a publie quelque chose d'inexploitable, "2019" par
+            # exemple. Dater du jour serait faux : on sait justement que ce
+            # n'est pas aujourd'hui. La valeur publiee reste consultable.
+            stored_date, source = None, "inconnue"
         elif estimate_dates:
             stored_date, source = iso_today, "detection"
         else:
@@ -180,6 +256,7 @@ def merge(
             "provider": entry["provider"],
             "provider_slug": entry["provider_slug"],
             "release_date": stored_date,
+            "release_date_raw": publiee,
             "date_source": source,
             "first_seen": iso_today,
             "notified": notified,
@@ -201,6 +278,9 @@ def _refresh_release_date(stored: dict, incoming: dict) -> None:
         "release_date"
     ):
         stored["release_date"] = incoming["release_date"]
+        # La date reelle rend la valeur publiee inutile : on la remplace par
+        # celle de la nouvelle lecture, vide dans le cas courant.
+        stored["release_date_raw"] = incoming.get("release_date_raw")
         stored["date_source"] = "provider"
     _refresh_attributes(stored, incoming)
 
@@ -281,6 +361,7 @@ def refresh_dates(state: dict, catalogue: list[dict]) -> int:
         if not entry.get("release_date"):
             continue
         stored["release_date"] = entry["release_date"]
+        stored["release_date_raw"] = entry.get("release_date_raw")
         stored["date_source"] = "provider"
         filled += 1
 

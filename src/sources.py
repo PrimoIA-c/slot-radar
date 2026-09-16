@@ -17,7 +17,7 @@ from typing import Any
 
 import requests
 
-from . import config, taxonomy
+from . import config, dates, taxonomy
 
 log = logging.getLogger(__name__)
 
@@ -168,8 +168,10 @@ def normalize(raw: dict) -> dict | None:
     if provider_slug.lower() in config.EXCLUDED_PROVIDERS:
         return None
 
-    release_date = _text(raw.get("release_date"))
-    release_date = release_date[:10] if release_date else None
+    # Le decoupage a dix caracteres laissait passer "31.10.2024" intact : la
+    # chaine fait exactement dix caracteres. Voir dates.py pour le releve des
+    # formes rencontrees et pourquoi le jour vient en premier.
+    release_date, release_date_raw = dates.split(_text(raw.get("release_date")))
 
     reels, rows = _grid_parts(raw.get("grid"))
 
@@ -190,6 +192,9 @@ def normalize(raw: dict) -> dict | None:
         "provider": provider,
         "provider_slug": provider_slug,
         "release_date": release_date,
+        # Valeur publiee, conservee seulement si elle a du etre convertie.
+        # L'atelier s'en sert pour signaler la conversion a l'ecran.
+        "release_date_raw": release_date_raw,
         # --- Caracteristiques ---------------------------------------------
         "rtp": _number(raw.get("rtp")),
         "volatility": _label(raw.get("volatility")),
