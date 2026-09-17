@@ -8513,6 +8513,25 @@
       "rtp": 95.98,
       "volatility": "High"
     },
+    "bgaming::johnny-vs-chicken": {
+      "date_source": "provider",
+      "first_seen": "2026-09-17",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Johnny vs Chicken",
+      "notified": false,
+      "paylines": null,
+      "provider": "BGaming",
+      "provider_slug": "bgaming",
+      "reels": 5,
+      "release_date": "2026-09-15",
+      "release_date_raw": null,
+      "released_notified": true,
+      "rows": 5,
+      "rtp": 97.0,
+      "volatility": "Medium high"
+    },
     "bgaming::joker-queen": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -9815,6 +9834,25 @@
       "rows": 6,
       "rtp": 96.14,
       "volatility": "High"
+    },
+    "bgaming::red-hot-chilli-chickens": {
+      "date_source": "provider",
+      "first_seen": "2026-09-17",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Red Hot Chilli Chickens",
+      "notified": false,
+      "paylines": null,
+      "provider": "Bgaming",
+      "provider_slug": "bgaming",
+      "reels": 5,
+      "release_date": "2026-09-17",
+      "release_date_raw": null,
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 96.22,
+      "volatility": "Medium"
     },
     "bgaming::retro-trader": {
       "date_source": "provider",
@@ -13008,7 +13046,7 @@
       "provider_slug": "blueprint-gaming",
       "reels": 5,
       "release_date": "2026-09-17",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 3,
       "rtp": 94.3,
       "volatility": "Medium"
@@ -19402,7 +19440,7 @@
       "provider": "Crazy Tooth Studio",
       "provider_slug": "crazy-tooth-studio",
       "release_date": "2026-09-17",
-      "released_notified": false,
+      "released_notified": true,
       "rtp": 96.16,
       "volatility": "Medium high"
     },
@@ -26763,6 +26801,25 @@
       "rows": 7,
       "rtp": 96.15,
       "volatility": "High"
+    },
+    "fantasma-games::midas-hype-house": {
+      "date_source": "provider",
+      "first_seen": "2026-09-17",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Midas Hype House",
+      "notified": false,
+      "paylines": null,
+      "provider": "Fantasma Games",
+      "provider_slug": "fantasma-games",
+      "reels": null,
+      "release_date": "2026-09-17",
+      "release_date_raw": null,
+      "released_notified": true,
+      "rows": null,
+      "rtp": 96.5,
+      "volatility": "Medium"
     },
     "fantasma-games::miner-moles": {
       "date_source": "provider",
@@ -41085,7 +41142,7 @@
       "provider_slug": "hacksaw-gaming",
       "reels": 5,
       "release_date": "2026-09-17",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.23,
       "volatility": "High"
@@ -63536,6 +63593,25 @@
       "rtp": 96.2,
       "volatility": "Medium"
     },
+    "playngo::lawn-n-complete-disorder": {
+      "date_source": "provider",
+      "first_seen": "2026-09-17",
+      "max_win": 18000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Lawn N' Complete Disorder",
+      "notified": false,
+      "paylines": null,
+      "provider": "Play'n GO",
+      "provider_slug": "playngo",
+      "reels": 5,
+      "release_date": "2026-09-17",
+      "release_date_raw": null,
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 96.2,
+      "volatility": "High"
+    },
     "playngo::lawn-n-disorder": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -72392,7 +72468,7 @@
       "provider_slug": "pragmatic-play",
       "reels": null,
       "release_date": "2026-09-17",
-      "released_notified": false,
+      "released_notified": true,
       "rows": null,
       "rtp": 96.42,
       "volatility": "Medium"
@@ -104289,6 +104365,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-16",
+  "last_run": "2026-09-17",
   "version": 4
 }
