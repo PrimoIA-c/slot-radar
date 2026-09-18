@@ -11141,6 +11141,25 @@
       "rtp": 96.0,
       "volatility": "Medium"
     },
+    "big-daddy-gaming::god-bod": {
+      "date_source": "provider",
+      "first_seen": "2026-09-18",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "God Bod",
+      "notified": false,
+      "paylines": null,
+      "provider": "Big Daddy Gaming",
+      "provider_slug": "big-daddy-gaming",
+      "reels": 5,
+      "release_date": "2026-09-15",
+      "release_date_raw": null,
+      "released_notified": true,
+      "rows": 5,
+      "rtp": 96.0,
+      "volatility": "Medium high"
+    },
     "big-daddy-gaming::going-ape": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -58066,7 +58085,7 @@
       "provider_slug": "nownow-gaming",
       "reels": 6,
       "release_date": "2026-09-18",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 6,
       "rtp": 96.31,
       "volatility": "Medium"
@@ -104365,6 +104384,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-17",
+  "last_run": "2026-09-18",
   "version": 4
 }
