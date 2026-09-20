@@ -42961,7 +42961,7 @@
       "provider_slug": "hacksaw-gaming",
       "reels": 5,
       "release_date": "2026-09-20",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.23,
       "volatility": "Medium"
@@ -104384,6 +104384,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-19",
+  "last_run": "2026-09-20",
   "version": 4
 }
