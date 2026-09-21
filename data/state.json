@@ -26736,6 +26736,25 @@
       "rtp": 96.49,
       "volatility": "High"
     },
+    "fantasma-games::koi-falls-flowing-fortune": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 2,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Koi Falls: Flowing Fortune",
+      "notified": true,
+      "paylines": null,
+      "provider": "Fantasma Games",
+      "provider_slug": "fantasma-games",
+      "reels": 5,
+      "release_date": "2026-10-22",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.23,
+      "volatility": "High"
+    },
     "fantasma-games::lost-mummy-treasures": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -27127,6 +27146,25 @@
       "rows": 4,
       "rtp": 96.0,
       "volatility": "High"
+    },
+    "fantasma-games::zeus-power-partners": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 10,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Zeus Power Partners",
+      "notified": true,
+      "paylines": null,
+      "provider": "Fantasma Games",
+      "provider_slug": "fantasma-games",
+      "reels": null,
+      "release_date": "2026-09-24",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": null,
+      "rtp": 96.22,
+      "volatility": "Medium"
     },
     "fortune-factory-studios::333-boom-banks-2-power-combo-slot-demo-by-fortune-factory-studios": {
       "date_source": "provider",
@@ -40620,6 +40658,25 @@
       "rows": 4,
       "rtp": 96.27,
       "volatility": "High"
+    },
+    "hacksaw-gaming::deadline-max-chaos": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 15000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Deadline: Max Chaos",
+      "notified": true,
+      "paylines": null,
+      "provider": "Hacksaw Gaming",
+      "provider_slug": "hacksaw-gaming",
+      "reels": 5,
+      "release_date": "2026-10-30",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.3,
+      "volatility": "Medium high"
     },
     "hacksaw-gaming::deal-with-death": {
       "date_source": "provider",
@@ -55867,6 +55924,25 @@
       "rtp": 96.06,
       "volatility": "Very high"
     },
+    "nolimit-city::ding-dong-death": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 14280,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Ding Dong Death",
+      "notified": true,
+      "paylines": null,
+      "provider": "Nolimit City",
+      "provider_slug": "nolimit-city",
+      "reels": 6,
+      "release_date": "2026-09-22",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 95.83,
+      "volatility": "High"
+    },
     "nolimit-city::disorder": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -58502,6 +58578,25 @@
       "rtp": 95.76,
       "volatility": "Low"
     },
+    "octoplay::elvis-presley-burning-jackpots": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 2250,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Elvis Presley: Burning Jackpots",
+      "notified": true,
+      "paylines": null,
+      "provider": "Octoplay",
+      "provider_slug": "octoplay",
+      "reels": 3,
+      "release_date": "2026-10-09",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 95.74,
+      "volatility": "Low"
+    },
     "octoplay::elvis-presley-viva-las-records": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -60560,6 +60655,25 @@
       "rtp": 96.25,
       "volatility": "Very high"
     },
+    "playngo::belly-smackdown-golden-gains": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 7100,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Belly Smackdown Golden Gains",
+      "notified": true,
+      "paylines": null,
+      "provider": "Play'n GO",
+      "provider_slug": "playngo",
+      "reels": 5,
+      "release_date": "2026-12-10",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.2,
+      "volatility": "Medium"
+    },
     "playngo::big-win-777": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -61288,6 +61402,25 @@
       "released_notified": true,
       "rows": 3,
       "rtp": 96.65,
+      "volatility": "High"
+    },
+    "playngo::christmas-gold-heist": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 50000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Christmas Gold Heist",
+      "notified": true,
+      "paylines": null,
+      "provider": "Play'n GO",
+      "provider_slug": "playngo",
+      "reels": 5,
+      "release_date": "2026-11-24",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.2,
       "volatility": "High"
     },
     "playngo::chronos-joker": {
@@ -66017,6 +66150,25 @@
       "rows": 3,
       "rtp": 96.2,
       "volatility": "Very high"
+    },
+    "playngo::rowdy-rabbits-collect-win": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 20000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Rowdy Rabbits Collect & Win",
+      "notified": true,
+      "paylines": null,
+      "provider": "Play'n GO",
+      "provider_slug": "playngo",
+      "reels": 5,
+      "release_date": "2026-12-15",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 3,
+      "rtp": 96.2,
+      "volatility": "Medium"
     },
     "playngo::royal-masquerade": {
       "date_source": "provider",
@@ -70768,6 +70920,25 @@
       "rtp": 96.5,
       "volatility": "Very high"
     },
+    "pragmatic-play::big-bass-halloween-splash-1000": {
+      "date_source": "detection",
+      "first_seen": "2026-09-21",
+      "max_win": 20000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Big Bass Halloween Splash 1000",
+      "notified": false,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 5,
+      "release_date": "2026-09-21",
+      "release_date_raw": null,
+      "released_notified": true,
+      "rows": 3,
+      "rtp": 96.5,
+      "volatility": null
+    },
     "pragmatic-play::big-bass-hold-spinner": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -74469,7 +74640,7 @@
       "provider_slug": "pragmatic-play",
       "reels": 5,
       "release_date": "2026-09-21",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 3,
       "rtp": 96.5,
       "volatility": "High"
@@ -81034,6 +81205,25 @@
       "rtp": 94.32,
       "volatility": "High"
     },
+    "pragmatic-play::sugar-megarush": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 50000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Sugar Megarush",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 7,
+      "release_date": "2026-11-30",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.5,
+      "volatility": "Medium"
+    },
     "pragmatic-play::sugar-rush": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -81435,6 +81625,25 @@
       "rows": 5,
       "rtp": 96.5,
       "volatility": "High"
+    },
+    "pragmatic-play::sweet-bonanza-pop": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 25000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Sweet Bonanza POP",
+      "notified": true,
+      "paylines": null,
+      "provider": "Pragmatic Play",
+      "provider_slug": "pragmatic-play",
+      "reels": 3,
+      "release_date": "2026-10-20",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 5,
+      "rtp": 97.05,
+      "volatility": "Medium high"
     },
     "pragmatic-play::sweet-bonanza-super-scatter": {
       "date_source": "provider",
@@ -96711,6 +96920,25 @@
       "rtp": 96.1,
       "volatility": "High"
     },
+    "relax-gaming::nuclear-tumble": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 5000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Nuclear Tumble",
+      "notified": true,
+      "paylines": null,
+      "provider": "Relax Gaming",
+      "provider_slug": "relax-gaming",
+      "reels": 6,
+      "release_date": "2026-10-29",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 6,
+      "rtp": 96.1,
+      "volatility": "Medium high"
+    },
     "relax-gaming::nugget-ridge": {
       "date_source": "provider",
       "first_seen": "2026-09-03",
@@ -102162,6 +102390,25 @@
       "rtp": 96.11,
       "volatility": "High"
     },
+    "wicked-games::dont-die": {
+      "date_source": "provider",
+      "first_seen": "2026-09-21",
+      "max_win": 10000,
+      "mechanic": null,
+      "mechanic_raw": null,
+      "name": "Don't Die",
+      "notified": true,
+      "paylines": null,
+      "provider": "Wicked Games",
+      "provider_slug": "wicked-games",
+      "reels": 6,
+      "release_date": "2026-10-15",
+      "release_date_raw": null,
+      "released_notified": false,
+      "rows": 4,
+      "rtp": 96.16,
+      "volatility": "Medium"
+    },
     "wicked-games::enriched": {
       "date_source": "provider",
       "first_seen": "2026-08-07",
@@ -102225,7 +102472,7 @@
       "provider_slug": "wicked-games",
       "reels": 5,
       "release_date": "2026-09-21",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.1,
       "volatility": "Medium high"
@@ -102375,7 +102622,7 @@
       "provider_slug": "wishbone-games",
       "reels": 5,
       "release_date": "2026-09-21",
-      "released_notified": false,
+      "released_notified": true,
       "rows": 4,
       "rtp": 96.02,
       "volatility": "High"
@@ -104384,6 +104631,6 @@
       "volatility": "High"
     }
   },
-  "last_run": "2026-09-20",
+  "last_run": "2026-09-21",
   "version": 4
 }
